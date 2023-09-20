@@ -1,0 +1,3008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HVALLESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HVALLESEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ACTIVOPC01" ReturnType="Collection(HVALLESModel.ACTIVOPC01_Result)" />
+    <FunctionImport Name="ACTIVOPC02" ReturnType="Collection(HVALLESModel.ACTIVOPC02_Result)">
+      <Parameter Name="fechaini" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ACTIVOPC03" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="ACTIVOPC04">
+      <Parameter Name="CUS_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ACTIVOPC05" ReturnType="Collection(HVALLESModel.ACTIVOPC05_Result)">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ArranqueMantCorrectivo" ReturnType="Collection(HVALLESModel.ArranqueMantCorrectivo_Result)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ArranqueMantPreventivo" ReturnType="Collection(HVALLESModel.ArranqueMantPreventivo_Result)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_AnyDataInTables" ReturnType="Collection(String)">
+      <Parameter Name="TablesToCheck" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Applications_CreateApplication">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="ApplicationId" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_CheckSchemaVersion">
+      <Parameter Name="Feature" Mode="In" Type="String" />
+      <Parameter Name="CompatibleSchemaVersion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_ChangePasswordQuestionAndAnswer">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="NewPasswordQuestion" Mode="In" Type="String" />
+      <Parameter Name="NewPasswordAnswer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_CreateUser">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="PasswordSalt" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="PasswordQuestion" Mode="In" Type="String" />
+      <Parameter Name="PasswordAnswer" Mode="In" Type="String" />
+      <Parameter Name="IsApproved" Mode="In" Type="Boolean" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UniqueEmail" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordFormat" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_FindUsersByEmail">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="EmailToMatch" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_FindUsersByName">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserNameToMatch" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetAllUsers">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetNumberOfUsersOnline">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="MinutesSinceLastInActive" Mode="In" Type="Int32" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetPassword" ReturnType="Collection(HVALLESModel.aspnet_Membership_GetPassword_Result)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="MaxInvalidPasswordAttempts" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordAttemptWindow" Mode="In" Type="Int32" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="PasswordAnswer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetPasswordWithFormat" ReturnType="Collection(HVALLESModel.aspnet_Membership_GetPasswordWithFormat_Result)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="UpdateLastLoginActivityDate" Mode="In" Type="Boolean" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetUserByEmail" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetUserByName" ReturnType="Collection(HVALLESModel.aspnet_Membership_GetUserByName_Result)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="UpdateLastActivity" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_GetUserByUserId" ReturnType="Collection(HVALLESModel.aspnet_Membership_GetUserByUserId_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="UpdateLastActivity" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_ResetPassword">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="NewPassword" Mode="In" Type="String" />
+      <Parameter Name="MaxInvalidPasswordAttempts" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordAttemptWindow" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordSalt" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="PasswordFormat" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordAnswer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_SetPassword">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="NewPassword" Mode="In" Type="String" />
+      <Parameter Name="PasswordSalt" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="PasswordFormat" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_UnlockUser">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_UpdateUser">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Comment" Mode="In" Type="String" />
+      <Parameter Name="IsApproved" Mode="In" Type="Boolean" />
+      <Parameter Name="LastLoginDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastActivityDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UniqueEmail" Mode="In" Type="Int32" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Membership_UpdateUserInfo">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="IsPasswordCorrect" Mode="In" Type="Boolean" />
+      <Parameter Name="UpdateLastLoginActivityDate" Mode="In" Type="Boolean" />
+      <Parameter Name="MaxInvalidPasswordAttempts" Mode="In" Type="Int32" />
+      <Parameter Name="PasswordAttemptWindow" Mode="In" Type="Int32" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="LastLoginDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastActivityDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Paths_CreatePath">
+      <Parameter Name="ApplicationId" Mode="In" Type="Guid" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="PathId" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Personalization_GetApplicationId">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="ApplicationId" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAdministration_DeleteAllState">
+      <Parameter Name="AllUsersScope" Mode="In" Type="Boolean" />
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Count" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAdministration_FindState">
+      <Parameter Name="AllUsersScope" Mode="In" Type="Boolean" />
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAdministration_GetCountOfState">
+      <Parameter Name="Count" Mode="InOut" Type="Int32" />
+      <Parameter Name="AllUsersScope" Mode="In" Type="Boolean" />
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAdministration_ResetSharedState">
+      <Parameter Name="Count" Mode="InOut" Type="Int32" />
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAdministration_ResetUserState">
+      <Parameter Name="Count" Mode="InOut" Type="Int32" />
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAllUsers_GetPageSettings" ReturnType="Collection(Binary)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAllUsers_ResetPageSettings">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationAllUsers_SetPageSettings">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="PageSettings" Mode="In" Type="Binary" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationPerUser_GetPageSettings" ReturnType="Collection(Binary)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationPerUser_ResetPageSettings">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_PersonalizationPerUser_SetPageSettings">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="PageSettings" Mode="In" Type="Binary" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_DeleteInactiveProfiles" ReturnType="Collection(Int32)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="ProfileAuthOptions" Mode="In" Type="Int32" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_DeleteProfiles" ReturnType="Collection(Int32)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserNames" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_GetNumberOfInactiveProfiles" ReturnType="Collection(Int32)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="ProfileAuthOptions" Mode="In" Type="Int32" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_GetProfiles">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="ProfileAuthOptions" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="UserNameToMatch" Mode="In" Type="String" />
+      <Parameter Name="InactiveSinceDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_GetProperties" ReturnType="Collection(HVALLESModel.aspnet_Profile_GetProperties_Result)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Profile_SetProperties">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="PropertyNames" Mode="In" Type="String" />
+      <Parameter Name="PropertyValuesString" Mode="In" Type="String" />
+      <Parameter Name="PropertyValuesBinary" Mode="In" Type="Binary" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="IsUserAnonymous" Mode="In" Type="Boolean" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_RegisterSchemaVersion">
+      <Parameter Name="Feature" Mode="In" Type="String" />
+      <Parameter Name="CompatibleSchemaVersion" Mode="In" Type="String" />
+      <Parameter Name="IsCurrentVersion" Mode="In" Type="Boolean" />
+      <Parameter Name="RemoveIncompatibleSchema" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Roles_CreateRole">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Roles_DeleteRole">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+      <Parameter Name="DeleteOnlyIfRoleIsEmpty" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Roles_GetAllRoles" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Roles_RoleExists">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Setup_RemoveAllRoleMembers">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Setup_RestorePermissions">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UnRegisterSchemaVersion">
+      <Parameter Name="Feature" Mode="In" Type="String" />
+      <Parameter Name="CompatibleSchemaVersion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Users_CreateUser">
+      <Parameter Name="ApplicationId" Mode="In" Type="Guid" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="IsUserAnonymous" Mode="In" Type="Boolean" />
+      <Parameter Name="LastActivityDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UserId" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_Users_DeleteUser">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="TablesToDeleteFrom" Mode="In" Type="Int32" />
+      <Parameter Name="NumTablesDeletedFrom" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_AddUsersToRoles" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserNames" Mode="In" Type="String" />
+      <Parameter Name="RoleNames" Mode="In" Type="String" />
+      <Parameter Name="CurrentTimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_FindUsersInRole" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+      <Parameter Name="UserNameToMatch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_GetRolesForUser" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_GetUsersInRoles" ReturnType="Collection(String)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_IsUserInRole">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_UsersInRoles_RemoveUsersFromRoles" ReturnType="Collection(HVALLESModel.aspnet_UsersInRoles_RemoveUsersFromRoles_Result)">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserNames" Mode="In" Type="String" />
+      <Parameter Name="RoleNames" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="aspnet_WebEvent_LogEvent">
+      <Parameter Name="EventId" Mode="In" Type="String" />
+      <Parameter Name="EventTimeUtc" Mode="In" Type="DateTime" />
+      <Parameter Name="EventTime" Mode="In" Type="DateTime" />
+      <Parameter Name="EventType" Mode="In" Type="String" />
+      <Parameter Name="EventSequence" Mode="In" Type="Decimal" />
+      <Parameter Name="EventOccurrence" Mode="In" Type="Decimal" />
+      <Parameter Name="EventCode" Mode="In" Type="Int32" />
+      <Parameter Name="EventDetailCode" Mode="In" Type="Int32" />
+      <Parameter Name="Message" Mode="In" Type="String" />
+      <Parameter Name="ApplicationPath" Mode="In" Type="String" />
+      <Parameter Name="ApplicationVirtualPath" Mode="In" Type="String" />
+      <Parameter Name="MachineName" Mode="In" Type="String" />
+      <Parameter Name="RequestUrl" Mode="In" Type="String" />
+      <Parameter Name="ExceptionType" Mode="In" Type="String" />
+      <Parameter Name="Details" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CORREOS_USUMANTENIMIENTO" ReturnType="Collection(HVALLESModel.CORREOS_USUMANTENIMIENTO_Result)" />
+    <FunctionImport Name="ELIMINA_ACTIVO">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ELIMINA_ACTIVO1">
+      <Parameter Name="act_codbarras" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ENVIA_MANTENIMIENTOSAUTO" ReturnType="Collection(HVALLESModel.ENVIA_MANTENIMIENTOSAUTO_Result)" />
+    <FunctionImport Name="LECTURA_MOVIMIENTOSPC01" ReturnType="Collection(HVALLESModel.LECTURA_MOVIMIENTOSPC01_Result)">
+      <Parameter Name="OP" Mode="In" Type="Int32" />
+      <Parameter Name="CODIGO" Mode="In" Type="String" />
+      <Parameter Name="TIPO" Mode="In" Type="String" />
+      <Parameter Name="FECHA_INI" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHA_FIN" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="MANTENIMIENTOPC01" ReturnType="Collection(HVALLESModel.MANTENIMIENTOPC01_Result)">
+      <Parameter Name="CODIGO" Mode="In" Type="String" />
+      <Parameter Name="SERIE" Mode="In" Type="String" />
+      <Parameter Name="OP" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MANTENIMIENTOPC03" ReturnType="Collection(HVALLESModel.MANTENIMIENTOPC03_Result)">
+      <Parameter Name="act_codbarras" Mode="In" Type="String" />
+      <Parameter Name="act_serie1" Mode="In" Type="String" />
+      <Parameter Name="OP" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MANTENIMIENTOPC05" ReturnType="Collection(HVALLESModel.MANTENIMIENTOPC05_Result)">
+      <Parameter Name="OP" Mode="In" Type="Int32" />
+      <Parameter Name="CODIGOBARRAS" Mode="In" Type="String" />
+      <Parameter Name="SERIE" Mode="In" Type="String" />
+      <Parameter Name="MARCA" Mode="In" Type="Int32" />
+      <Parameter Name="MODELO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MANTENIMIENTOPI01">
+      <Parameter Name="MAN_DESCRIPCION" Mode="In" Type="String" />
+      <Parameter Name="TIP_ID_CORRECTIVO" Mode="In" Type="Int32" />
+      <Parameter Name="TIP_ID_PREVENTIVO" Mode="In" Type="Int32" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="MAN_FECHA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MAN_REALIZADO" Mode="In" Type="Boolean" />
+      <Parameter Name="MAN_FECHAPROXINI" Mode="In" Type="DateTime" />
+      <Parameter Name="MAN_VALOR" Mode="In" Type="Decimal" />
+      <Parameter Name="MAN_NUMDOC" Mode="In" Type="String" />
+      <Parameter Name="MAN_FORMA" Mode="In" Type="String" />
+      <Parameter Name="MAN_COBERTURA" Mode="In" Type="Int32" />
+      <Parameter Name="MAN_MODALIDAD" Mode="In" Type="String" />
+      <Parameter Name="MAN_PORMESES" Mode="In" Type="String" />
+      <Parameter Name="MAN_ESTADO" Mode="In" Type="String" />
+      <Parameter Name="MAN_FECHAPROXFIN" Mode="In" Type="DateTime" />
+      <Parameter Name="MAN_FECHAREALMANT" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ESTADOMANT" Mode="In" Type="String" />
+      <Parameter Name="ACT_FECHAENVIOMANT" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_FECHAREGRESOMANT" Mode="In" Type="DateTime" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MANTENIMIENTOPI02">
+      <Parameter Name="MAN_DESCRIPCION" Mode="In" Type="String" />
+      <Parameter Name="TIP_ID_CORRECTIVO" Mode="In" Type="Int32" />
+      <Parameter Name="TIP_ID_PREVENTIVO" Mode="In" Type="Int32" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="MAN_FECHA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MAN_REALIZADO" Mode="In" Type="Boolean" />
+      <Parameter Name="MAN_FECHAPROXINI" Mode="In" Type="DateTime" />
+      <Parameter Name="MAN_VALOR" Mode="In" Type="Decimal" />
+      <Parameter Name="MAN_NUMDOC" Mode="In" Type="String" />
+      <Parameter Name="MAN_FORMA" Mode="In" Type="String" />
+      <Parameter Name="MAN_COBERTURA" Mode="In" Type="Int32" />
+      <Parameter Name="MAN_MODALIDAD" Mode="In" Type="String" />
+      <Parameter Name="MAN_PORMESES" Mode="In" Type="String" />
+      <Parameter Name="MAN_ESTADO" Mode="In" Type="String" />
+      <Parameter Name="MAN_FECHAPROXFIN" Mode="In" Type="DateTime" />
+      <Parameter Name="MAN_FECHAREALMANT" Mode="In" Type="DateTime" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PARAMETROSPC01" ReturnType="Collection(HVALLESModel.PARAMETROSPC01_Result)">
+      <Parameter Name="par_nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="REPORTEMOVILPC01" ReturnType="Collection(HVALLESModel.REPORTEMOVILPC01_Result)">
+      <Parameter Name="OP" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_VERIFICA_BLOQUEO" />
+    <FunctionImport Name="us_ReporteGlobalACTIVO" />
+    <FunctionImport Name="usp_ArranqueMantenimientos" ReturnType="Collection(HVALLESModel.usp_ArranqueMantenimientos_Result)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BackupBddALL">
+      <Parameter Name="ruta" Mode="In" Type="String" />
+      <Parameter Name="base" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BajaACTIVO">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_TIPO" Mode="In" Type="String" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="ACT_FECHABAJA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_TIPOBAJA" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_OBSBAJA" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CambiaEstadoAutActivo">
+      <Parameter Name="codbarras" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CambiaEstadoAutFiltro">
+      <Parameter Name="codbarras" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CambiaEstadoMantActivo">
+      <Parameter Name="codbarras" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="String" />
+      <Parameter Name="op" Mode="In" Type="Int32" />
+      <Parameter Name="act_cod" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delGRUPO">
+      <Parameter Name="GRU_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delGRUPO2">
+      <Parameter Name="GRU_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delGRUPO3">
+      <Parameter Name="GRU_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUGEOGRAFICA">
+      <Parameter Name="UGE_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUGEOGRAFICA2">
+      <Parameter Name="UGE_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUGEOGRAFICA3">
+      <Parameter Name="UGE_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUGEOGRAFICA4">
+      <Parameter Name="UGE_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUGEOGRAFICA5">
+      <Parameter Name="UGE_ID5" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUORGANICA2">
+      <Parameter Name="UOR_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUORGANICA3">
+      <Parameter Name="UOR_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delUORGANICA4">
+      <Parameter Name="UOR_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ErrorLogin">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="IPAddress" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getActivomantenimiento" ReturnType="Collection(HVALLESModel.usp_getActivomantenimiento_Result)">
+      <Parameter Name="actid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getCaracteristicasAva" ReturnType="Collection(String)" />
+    <FunctionImport Name="usp_getDatosPdf" ReturnType="Collection(HVALLESModel.usp_getDatosPdf_Result)">
+      <Parameter Name="actid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDatosPdf2" ReturnType="Collection(HVALLESModel.usp_getDatosPdf2_Result)">
+      <Parameter Name="actid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGenerada">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaCCNiif">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaCContables">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaCContables2">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaCContables4">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaNiif">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaOk">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getDepreciacionGeneradaTribu" />
+    <FunctionImport Name="usp_getDepreciacionGeneradaTribu2">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getFiltroActivoPpc" ReturnType="Collection(HVALLESModel.usp_getFiltroActivoPpc_Result)">
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_GetReporteGlobalAval" ReturnType="Collection(HVALLESModel.usp_GetReporteGlobalAval_Result)">
+      <Parameter Name="DESDE" Mode="In" Type="DateTime" />
+      <Parameter Name="HASTA" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getReporteMantenimiento" ReturnType="Collection(HVALLESModel.usp_getReporteMantenimiento_Result)">
+      <Parameter Name="idcod" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getReporteTransfer" ReturnType="Collection(HVALLESModel.usp_getReporteTransfer_Result)">
+      <Parameter Name="cb" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="ide" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getUgeAll3Level1" ReturnType="Collection(HVALLESModel.usp_getUgeAll3Level1_Result)" />
+    <FunctionImport Name="usp_getUgeAll3Level2" ReturnType="Collection(HVALLESModel.usp_getUgeAll3Level2_Result)" />
+    <FunctionImport Name="usp_getUgeAll3Level3" ReturnType="Collection(HVALLESModel.usp_getUgeAll3Level3_Result)" />
+    <FunctionImport Name="usp_IngresaDeMantenimiento">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_IniTransferACTIVO">
+      <Parameter Name="actid" Mode="In" Type="Int32" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="geo1" Mode="In" Type="Int32" />
+      <Parameter Name="geo2" Mode="In" Type="Int32" />
+      <Parameter Name="geo3" Mode="In" Type="Int32" />
+      <Parameter Name="geo4" Mode="In" Type="Int32" />
+      <Parameter Name="uor1" Mode="In" Type="Int32" />
+      <Parameter Name="uor2" Mode="In" Type="Int32" />
+      <Parameter Name="uor3" Mode="In" Type="Int32" />
+      <Parameter Name="cus1" Mode="In" Type="Int32" />
+      <Parameter Name="cus2" Mode="In" Type="Int32" />
+      <Parameter Name="est1" Mode="In" Type="Int32" />
+      <Parameter Name="est2" Mode="In" Type="Int32" />
+      <Parameter Name="est3" Mode="In" Type="Int32" />
+      <Parameter Name="estman" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_IniTransferACTIVOMas">
+      <Parameter Name="actid" Mode="In" Type="Int32" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="geo1" Mode="In" Type="Int32" />
+      <Parameter Name="geo2" Mode="In" Type="Int32" />
+      <Parameter Name="geo3" Mode="In" Type="Int32" />
+      <Parameter Name="geo4" Mode="In" Type="Int32" />
+      <Parameter Name="uor1" Mode="In" Type="Int32" />
+      <Parameter Name="uor2" Mode="In" Type="Int32" />
+      <Parameter Name="uor3" Mode="In" Type="Int32" />
+      <Parameter Name="cus1" Mode="In" Type="Int32" />
+      <Parameter Name="cus2" Mode="In" Type="Int32" />
+      <Parameter Name="est3" Mode="In" Type="Int32" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insDepreGenerada">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insDepreGeneradaNiif">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insDepreGeneradaTribu">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_InsertACTIVO">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="EMP_ID" Mode="In" Type="String" />
+      <Parameter Name="ACT_FECHAINIDEPRE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_DEPRECIABLE" Mode="In" Type="Boolean" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="ACT_TIPO" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRAS" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRASPADRE" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODIGO1" Mode="In" Type="String" />
+      <Parameter Name="GRU_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FOTO1" Mode="In" Type="String" />
+      <Parameter Name="ACT_FOTO2" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC1" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC2" Mode="In" Type="String" />
+      <Parameter Name="UGE_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="MAR_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MOD_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SERIE1" Mode="In" Type="String" />
+      <Parameter Name="COL_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="PRO_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_TIPOING" Mode="In" Type="String" />
+      <Parameter Name="ACT_NUMFACT" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_FECHACOMPRA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_VALORCOMPRA" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_ANIO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_VIDAUTIL" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_VIDAUTILNIIF" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_VALORRESIDUALNIIF" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_FECHAINIOPER" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_FECHAINIDEPRENIIF" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_GARANTIA" Mode="In" Type="Boolean" />
+      <Parameter Name="ACT_FECHAGARANTIAVENCE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_OBSERVACIONES" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODRFID" Mode="In" Type="String" />
+      <Parameter Name="ACT_TIPRFID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SEGURO" Mode="In" Type="String" />
+      <Parameter Name="ACT_TIPOSEGURO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FECHACREACION" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_NUMPOLIZA" Mode="In" Type="String" />
+      <Parameter Name="ACT_VIGENCIAPOLIZAMESES" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FECHAEMISIONPOLIZA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_FECHAVENCEPOLIZA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_VALORASEGURADO" Mode="In" Type="Decimal" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_InsertACTIVOM">
+      <Parameter Name="ACT_OBSERVACIONES2" Mode="In" Type="String" />
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="EMP_ID" Mode="In" Type="String" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="ACT_TIPO" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRAS" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRASPADRE" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODIGO1" Mode="In" Type="String" />
+      <Parameter Name="GRU_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FOTO1" Mode="In" Type="String" />
+      <Parameter Name="ACT_FOTO2" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC1" Mode="In" Type="String" />
+      <Parameter Name="UGE_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="MAR_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MOD_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SERIE1" Mode="In" Type="String" />
+      <Parameter Name="COL_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FECHACOMPRA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ANIO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_OBSERVACIONES" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_InsertMANTENIMIENTO">
+      <Parameter Name="MAN_DESCRIPCION" Mode="In" Type="String" />
+      <Parameter Name="TIP_ID" Mode="In" Type="Int32" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="MAN_FECHA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MAN_REALIZADO" Mode="In" Type="Boolean" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteACTIVOPdf">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteACTIVOPdf11">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteAutorizadosRFID">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteFiltradoRFID">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteGlobalACTIVO">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteGlobalACTIVO_AVALUAC">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteGlobalACTIVO2">
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="f1" Mode="In" Type="DateTime" />
+      <Parameter Name="f2" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteGlobalACTIVOAll">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteGlobalACTVO" />
+    <FunctionImport Name="usp_ReporteGlobalTrasACTIVO">
+      <Parameter Name="where" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReporteHistoricoMantenimiento" ReturnType="Collection(HVALLESModel.usp_ReporteHistoricoMantenimiento_Result)">
+      <Parameter Name="codbarras" Mode="In" Type="String" />
+      <Parameter Name="op" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ReportePpcACTIVO">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_SummaryLoginS" ReturnType="Collection(HVALLESModel.usp_SummaryLoginS_Result)" />
+    <FunctionImport Name="usp_UpdateACTIVO">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRASPADRE" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODIGO1" Mode="In" Type="String" />
+      <Parameter Name="GRU_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FOTO1" Mode="In" Type="String" />
+      <Parameter Name="ACT_FOTO2" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC1" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC2" Mode="In" Type="String" />
+      <Parameter Name="UGE_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="MAR_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MOD_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SERIE1" Mode="In" Type="String" />
+      <Parameter Name="COL_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="PRO_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_NUMFACT" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_FECHACOMPRA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_ANIO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_VALORRESIDUALNIIF" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_GARANTIA" Mode="In" Type="Boolean" />
+      <Parameter Name="ACT_FECHAGARANTIAVENCE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_OBSERVACIONES" Mode="In" Type="String" />
+      <Parameter Name="ACT_VALORCOMPRA" Mode="In" Type="Decimal" />
+      <Parameter Name="ACT_DEPRECIADOSRI" Mode="In" Type="Boolean" />
+      <Parameter Name="ACT_DEPRECIADONIIF" Mode="In" Type="Boolean" />
+      <Parameter Name="ACT_TIPRFID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SEGURO" Mode="In" Type="String" />
+      <Parameter Name="ACT_TIPOSEGURO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_NUMPOLIZA" Mode="In" Type="String" />
+      <Parameter Name="ACT_VIGENCIAPOLIZAMESES" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FECHAEMISIONPOLIZA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_FECHAVENCEPOLIZA" Mode="In" Type="DateTime" />
+      <Parameter Name="ACT_VALORASEGURADO" Mode="In" Type="Decimal" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateACTIVOM">
+      <Parameter Name="ACT_ID" Mode="In" Type="Int32" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODBARRASPADRE" Mode="In" Type="String" />
+      <Parameter Name="ACT_CODIGO1" Mode="In" Type="String" />
+      <Parameter Name="GRU_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="GRU_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_FOTO1" Mode="In" Type="String" />
+      <Parameter Name="ACT_FOTO2" Mode="In" Type="String" />
+      <Parameter Name="ACT_DOC1" Mode="In" Type="String" />
+      <Parameter Name="UGE_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="UGE_ID4" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="UOR_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="CUS_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="EST_ID3" Mode="In" Type="Int32" />
+      <Parameter Name="MAR_ID" Mode="In" Type="Int32" />
+      <Parameter Name="MOD_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_SERIE1" Mode="In" Type="String" />
+      <Parameter Name="COL_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="ECO_ID2" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_ANIO" Mode="In" Type="Int32" />
+      <Parameter Name="ACT_OBSERVACIONES" Mode="In" Type="String" />
+      <Parameter Name="err" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ACRESERVAs" EntityType="HVALLESModel.ACRESERVA" />
+    <EntitySet Name="ACTAs" EntityType="HVALLESModel.ACTA" />
+    <EntitySet Name="ANIOs" EntityType="HVALLESModel.ANIO" />
+    <EntitySet Name="aspnet_Applications" EntityType="HVALLESModel.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="HVALLESModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="HVALLESModel.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="HVALLESModel.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="HVALLESModel.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="HVALLESModel.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="HVALLESModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="HVALLESModel.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="HVALLESModel.aspnet_Users" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="HVALLESModel.aspnet_WebEvent_Events" />
+    <EntitySet Name="BLOQUEO_PASSWORD" EntityType="HVALLESModel.BLOQUEO_PASSWORD" />
+    <EntitySet Name="CARACTERISTICAs" EntityType="HVALLESModel.CARACTERISTICA" />
+    <EntitySet Name="CARGOes" EntityType="HVALLESModel.CARGO" />
+    <EntitySet Name="CCARs" EntityType="HVALLESModel.CCAR" />
+    <EntitySet Name="CFAMILIAs" EntityType="HVALLESModel.CFAMILIA" />
+    <EntitySet Name="CODIGOes" EntityType="HVALLESModel.CODIGO" />
+    <EntitySet Name="CODIGOMASIVOes" EntityType="HVALLESModel.CODIGOMASIVO" />
+    <EntitySet Name="COLORs" EntityType="HVALLESModel.COLOR" />
+    <EntitySet Name="CUSTODIOs" EntityType="HVALLESModel.CUSTODIO" />
+    <EntitySet Name="DEPRECIACIONs" EntityType="HVALLESModel.DEPRECIACION" />
+    <EntitySet Name="DEPRECIACIONSRIs" EntityType="HVALLESModel.DEPRECIACIONSRI" />
+    <EntitySet Name="DGENERADAs" EntityType="HVALLESModel.DGENERADA" />
+    <EntitySet Name="DGENERADASRIs" EntityType="HVALLESModel.DGENERADASRI" />
+    <EntitySet Name="EMPRESAs" EntityType="HVALLESModel.EMPRESA" />
+    <EntitySet Name="ESTADOes" EntityType="HVALLESModel.ESTADO" />
+    <EntitySet Name="ESTRUCOMPs" EntityType="HVALLESModel.ESTRUCOMP" />
+    <EntitySet Name="GRUPOes" EntityType="HVALLESModel.GRUPO" />
+    <EntitySet Name="GRUPOSRIs" EntityType="HVALLESModel.GRUPOSRI" />
+    <EntitySet Name="HCODIGOes" EntityType="HVALLESModel.HCODIGO" />
+    <EntitySet Name="HISTORIAL_PASSWORD" EntityType="HVALLESModel.HISTORIAL_PASSWORD" />
+    <EntitySet Name="HUCUSTODIOs" EntityType="HVALLESModel.HUCUSTODIO" />
+    <EntitySet Name="INVALIDCREDENTIALSLOGs" EntityType="HVALLESModel.INVALIDCREDENTIALSLOG" />
+    <EntitySet Name="MACTIVOes" EntityType="HVALLESModel.MACTIVO" />
+    <EntitySet Name="MANTENIMIENTOes" EntityType="HVALLESModel.MANTENIMIENTO" />
+    <EntitySet Name="MARCAs" EntityType="HVALLESModel.MARCA" />
+    <EntitySet Name="MODELOes" EntityType="HVALLESModel.MODELO" />
+    <EntitySet Name="MOVIMIENTO_RFID" EntityType="HVALLESModel.MOVIMIENTO_RFID" />
+    <EntitySet Name="PAIS" EntityType="HVALLESModel.PAI" />
+    <EntitySet Name="PARAMETROS" EntityType="HVALLESModel.PARAMETRO" />
+    <EntitySet Name="POTENCIA_ANTENA" EntityType="HVALLESModel.POTENCIA_ANTENA" />
+    <EntitySet Name="PPCs" EntityType="HVALLESModel.PPC" />
+    <EntitySet Name="PROVEEDORs" EntityType="HVALLESModel.PROVEEDOR" />
+    <EntitySet Name="REPORTEs" EntityType="HVALLESModel.REPORTE" />
+    <EntitySet Name="ROLPPCs" EntityType="HVALLESModel.ROLPPC" />
+    <EntitySet Name="TIPO_SEGURO" EntityType="HVALLESModel.TIPO_SEGURO" />
+    <EntitySet Name="TIPOMen" EntityType="HVALLESModel.TIPOMAN" />
+    <EntitySet Name="UGEOGRAFICAs" EntityType="HVALLESModel.UGEOGRAFICA" />
+    <EntitySet Name="UNIDADs" EntityType="HVALLESModel.UNIDAD" />
+    <EntitySet Name="UORGANICAs" EntityType="HVALLESModel.UORGANICA" />
+    <EntitySet Name="USUPPCs" EntityType="HVALLESModel.USUPPC" />
+    <EntitySet Name="XCUORs" EntityType="HVALLESModel.XCUOR" />
+    <EntitySet Name="HFOTOes" EntityType="HVALLESModel.HFOTO" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__373B3228" Association="HVALLESModel.FK__aspnet_Me__Appli__373B3228">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__39237A9A" Association="HVALLESModel.FK__aspnet_Pa__Appli__39237A9A">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__3DE82FB7" Association="HVALLESModel.FK__aspnet_Ro__Appli__3DE82FB7">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__3EDC53F0" Association="HVALLESModel.FK__aspnet_Us__Appli__3EDC53F0">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__382F5661" Association="HVALLESModel.FK__aspnet_Me__UserI__382F5661">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__3A179ED3" Association="HVALLESModel.FK__aspnet_Pe__PathI__3A179ED3">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__3B0BC30C" Association="HVALLESModel.FK__aspnet_Pe__PathI__3B0BC30C">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__3BFFE745" Association="HVALLESModel.FK__aspnet_Pe__UserI__3BFFE745">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__3CF40B7E" Association="HVALLESModel.FK__aspnet_Pr__UserI__3CF40B7E">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_CFAMILIA" Association="HVALLESModel.FK_CARACTERISTICA_CFAMILIA">
+      <End Role="CFAMILIA" EntitySet="CFAMILIAs" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_UNIDAD" Association="HVALLESModel.FK_CARACTERISTICA_UNIDAD">
+      <End Role="UNIDAD" EntitySet="UNIDADs" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTODIO_CARGO" Association="HVALLESModel.FK_CUSTODIO_CARGO">
+      <End Role="CARGO" EntitySet="CARGOes" />
+      <End Role="CUSTODIO" EntitySet="CUSTODIOs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CFAMILIA_GRUPO" Association="HVALLESModel.FK_CFAMILIA_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="CFAMILIA" EntitySet="CFAMILIAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XCUOR_CUSTODIO" Association="HVALLESModel.FK_XCUOR_CUSTODIO">
+      <End Role="CUSTODIO" EntitySet="CUSTODIOs" />
+      <End Role="XCUOR" EntitySet="XCUORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRUPOSRI_GRUPO" Association="HVALLESModel.FK_GRUPOSRI_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="GRUPOSRI" EntitySet="GRUPOSRIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_GRUPO" Association="HVALLESModel.FK_PROVEEDOR_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MODELO_MARCA" Association="HVALLESModel.FK_MODELO_MARCA">
+      <End Role="MARCA" EntitySet="MARCAs" />
+      <End Role="MODELO" EntitySet="MODELOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS" Association="HVALLESModel.FK_PROVEEDOR_PAIS">
+      <End Role="PAI" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS1" Association="HVALLESModel.FK_PROVEEDOR_PAIS1">
+      <End Role="PAI" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS2" Association="HVALLESModel.FK_PROVEEDOR_PAIS2">
+      <End Role="PAI" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UORGANICA_UGEOGRAFICA" Association="HVALLESModel.FK_UORGANICA_UGEOGRAFICA">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICAs" />
+      <End Role="UORGANICA" EntitySet="UORGANICAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XCUOR_UORGANICA" Association="HVALLESModel.FK_XCUOR_UORGANICA">
+      <End Role="UORGANICA" EntitySet="UORGANICAs" />
+      <End Role="XCUOR" EntitySet="XCUORs" />
+    </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="HVALLESModel.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="USUROLPPC" Association="HVALLESModel.USUROLPPC">
+      <End Role="ROLPPC" EntitySet="ROLPPCs" />
+      <End Role="USUPPC" EntitySet="USUPPCs" />
+    </AssociationSet>
+    <EntitySet Name="ACTIVOes" EntityType="HVALLESModel.ACTIVO" />
+    <AssociationSet Name="FK_ACTIVO_COLOR" Association="HVALLESModel.FK_ACTIVO_COLOR">
+      <End Role="COLOR" EntitySet="COLORs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_CUSTODIO" Association="HVALLESModel.FK_ACTIVO_CUSTODIO">
+      <End Role="CUSTODIO" EntitySet="CUSTODIOs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ECO1" Association="HVALLESModel.FK_ACTIVO_ECO1">
+      <End Role="ESTRUCOMP" EntitySet="ESTRUCOMPs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ECO2" Association="HVALLESModel.FK_ACTIVO_ECO2">
+      <End Role="ESTRUCOMP" EntitySet="ESTRUCOMPs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ESTADO" Association="HVALLESModel.FK_ACTIVO_ESTADO">
+      <End Role="ESTADO" EntitySet="ESTADOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ESTADO1" Association="HVALLESModel.FK_ACTIVO_ESTADO1">
+      <End Role="ESTADO" EntitySet="ESTADOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO" Association="HVALLESModel.FK_ACTIVO_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO2" Association="HVALLESModel.FK_ACTIVO_GRUPO2">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO3" Association="HVALLESModel.FK_ACTIVO_GRUPO3">
+      <End Role="GRUPO" EntitySet="GRUPOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_MARCA" Association="HVALLESModel.FK_ACTIVO_MARCA">
+      <End Role="MARCA" EntitySet="MARCAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_MODELO" Association="HVALLESModel.FK_ACTIVO_MODELO">
+      <End Role="MODELO" EntitySet="MODELOes" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_PROVEEDOR" Association="HVALLESModel.FK_ACTIVO_PROVEEDOR">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_TIPOSEGURO" Association="HVALLESModel.FK_ACTIVO_TIPOSEGURO">
+      <End Role="TIPO_SEGURO" EntitySet="TIPO_SEGURO" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA" Association="HVALLESModel.FK_ACTIVO_UGEOGRAFICA">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA1" Association="HVALLESModel.FK_ACTIVO_UGEOGRAFICA1">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA2" Association="HVALLESModel.FK_ACTIVO_UGEOGRAFICA2">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA3" Association="HVALLESModel.FK_ACTIVO_UGEOGRAFICA3">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UORGANICA2" Association="HVALLESModel.FK_ACTIVO_UORGANICA2">
+      <End Role="UORGANICA" EntitySet="UORGANICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UORGANICA3" Association="HVALLESModel.FK_ACTIVO_UORGANICA3">
+      <End Role="UORGANICA" EntitySet="UORGANICAs" />
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_ACTIVO1" Association="HVALLESModel.FK_CARACTERISTICA_ACTIVO1">
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPRECIACION_ACTIVO" Association="HVALLESModel.FK_DEPRECIACION_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+      <End Role="DEPRECIACION" EntitySet="DEPRECIACIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPRECIACIONSRI_ACTIVO" Association="HVALLESModel.FK_DEPRECIACIONSRI_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+      <End Role="DEPRECIACIONSRI" EntitySet="DEPRECIACIONSRIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANTENIMIENTO_ACTIVO" Association="HVALLESModel.FK_MANTENIMIENTO_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVOes" />
+      <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTOes" />
+    </AssociationSet>
+    <EntitySet Name="Cabeceras" EntityType="HVALLESModel.Cabecera" />
+    <EntitySet Name="DetalleModuloes" EntityType="HVALLESModel.DetalleModulo" />
+  </EntityContainer>
+  <ComplexType Name="ACTIVOPC01_Result">
+    <Property Type="Int32" Name="par_id" Nullable="false" />
+    <Property Type="String" Name="par_valor" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ACTIVOPC02_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Tipo_Activo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Código" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Valor_Compra" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Nº_Factura" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Vida_Útil" Nullable="true" />
+    <Property Type="String" Name="Código_Padre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Código_1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ubi__Geo_1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Geo_2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Geo_3" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Geo_4" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Centro_de_Costo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Org1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Org2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Custodio" Nullable="true" MaxLength="401" />
+    <Property Type="String" Name="Grupo" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Subgrupo" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Descripción" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Marca" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Modelo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Nº_Serie" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Año" Nullable="true" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="120" />
+    <Property Type="String" Name="Estructura" Nullable="true" MaxLength="120" />
+    <Property Type="String" Name="Componente" Nullable="true" MaxLength="120" />
+    <Property Type="String" Name="Proveedor" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ACTIVOPC05_Result">
+    <Property Type="Int32" Name="ACT_ID" Nullable="false" />
+    <Property Type="String" Name="EMP_ID" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="ACT_FECHACREACION" Nullable="false" Precision="16" />
+    <Property Type="DateTime" Name="ACT_FECHAINIDEPRE" Nullable="true" Precision="16" />
+    <Property Type="Boolean" Name="ACT_DEPRECIABLESRI" Nullable="true" />
+    <Property Type="Boolean" Name="ACT_DEPRECIABLE" Nullable="true" />
+    <Property Type="Boolean" Name="ACT_DEPRECIADOSRI" Nullable="true" />
+    <Property Type="Boolean" Name="ACT_DEPRECIADONIIF" Nullable="true" />
+    <Property Type="DateTime" Name="ACT_FECHAINIOPER" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="ACT_FECHAINIDEPRENIIF" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="ACT_FECHABAJA" Nullable="true" Precision="16" />
+    <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ACT_TIPO" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ACT_CODBARRAS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ACT_CODBARRASPADRE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ACT_CODIGO1" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="GRU_ID1" Nullable="false" />
+    <Property Type="Int32" Name="GRU_ID2" Nullable="false" />
+    <Property Type="Int32" Name="GRU_ID3" Nullable="false" />
+    <Property Type="String" Name="ACT_FOTO1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_FOTO2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_DOC1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_DOC2" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="UGE_ID1" Nullable="false" />
+    <Property Type="Int32" Name="UGE_ID2" Nullable="false" />
+    <Property Type="Int32" Name="UGE_ID3" Nullable="false" />
+    <Property Type="Int32" Name="UGE_ID4" Nullable="false" />
+    <Property Type="Int32" Name="UOR_ID1" Nullable="false" />
+    <Property Type="Int32" Name="UOR_ID2" Nullable="false" />
+    <Property Type="Int32" Name="UOR_ID3" Nullable="false" />
+    <Property Type="Int32" Name="CUS_ID1" Nullable="false" />
+    <Property Type="Int32" Name="CUS_ID2" Nullable="true" />
+    <Property Type="Int32" Name="EST_ID1" Nullable="false" />
+    <Property Type="Int32" Name="EST_ID2" Nullable="true" />
+    <Property Type="Int32" Name="EST_ID3" Nullable="true" />
+    <Property Type="Int32" Name="MAR_ID" Nullable="false" />
+    <Property Type="Int32" Name="MOD_ID" Nullable="false" />
+    <Property Type="String" Name="ACT_SERIE1" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="COL_ID" Nullable="true" />
+    <Property Type="Int32" Name="ECO_ID1" Nullable="true" />
+    <Property Type="Int32" Name="ECO_ID2" Nullable="true" />
+    <Property Type="Int32" Name="PRO_ID" Nullable="true" />
+    <Property Type="String" Name="ACT_TIPOING" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ACT_NUMFACT" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="ACT_FECHACOMPRA" Nullable="true" Precision="16" />
+    <Property Type="Decimal" Name="ACT_VALORCOMPRA" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="ACT_ANIO" Nullable="true" />
+    <Property Type="Int32" Name="ACT_VIDAUTIL" Nullable="true" />
+    <Property Type="Int32" Name="ACT_VIDAUTILNIIF" Nullable="true" />
+    <Property Type="Decimal" Name="ACT_VALORRESIDUALNIIF" Nullable="true" Precision="19" />
+    <Property Type="Boolean" Name="ACT_GARANTIA" Nullable="true" />
+    <Property Type="DateTime" Name="ACT_FECHAGARANTIAVENCE" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ACT_OBSERVACIONES" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="ACT_TRANSFEROK" Nullable="false" />
+    <Property Type="Int32" Name="ACT_PPC" Nullable="true" />
+    <Property Type="String" Name="ACT_H1" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="ACT_H2" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="ACT_PE" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="ACT_OBSERVACIONES2" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="ACT_TIPOBAJA" Nullable="true" />
+    <Property Type="String" Name="ACT_OBSBAJA" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ACT_BAJAPROCESADA" Nullable="true" />
+    <Property Type="Boolean" Name="ACT_BAJAPROCESADASRI" Nullable="true" />
+    <Property Type="String" Name="ACT_RESUMEN" Nullable="true" MaxLength="300" />
+    <Property Type="Decimal" Name="ACT_VALORREPO" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="ACT_VALORRAZONABLE" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="ACT_FECHAINVENTARIO" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ACT_CODRFID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ACT_STRADICIONAL3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ACT_RETIQUETAR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ACT_AUTRFID" Nullable="true" />
+    <Property Type="Int32" Name="ACT_FILRFID" Nullable="true" />
+    <Property Type="Int32" Name="ACT_TIPRFID" Nullable="true" />
+    <Property Type="String" Name="ACT_SEGURO" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="ACT_TIPOSEGURO" Nullable="true" />
+    <Property Type="String" Name="ACT_ESTADOMANT" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="ACT_FECHAENVIOMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="ACT_FECHAREGRESOMANT" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ACT_DESCRIPCIONLARGA" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="ACT_FECHASEGUROVENCE" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="ACT_DIASAVISOGARANTIA" Nullable="true" />
+    <Property Type="Int32" Name="ACT_DIASAVISOMANTPREVENTIVO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ArranqueMantCorrectivo_Result">
+    <Property Type="Int32" Name="MAN_ID" Nullable="false" />
+    <Property Type="String" Name="MAN_DESCRIPCION" Nullable="true" MaxLength="900" />
+    <Property Type="Int32" Name="TIP_ID_CORRECTIVO" Nullable="true" />
+    <Property Type="Int32" Name="TIP_ID_PREVENTIVO" Nullable="true" />
+    <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="90" />
+    <Property Type="DateTime" Name="MAN_FECHA" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="ACT_ID" Nullable="false" />
+    <Property Type="Boolean" Name="MAN_REALIZADO" Nullable="true" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXINI" Nullable="true" Precision="16" />
+    <Property Type="Decimal" Name="MAN_VALOR" Nullable="true" Precision="14" Scale="4" />
+    <Property Type="String" Name="MAN_NUMDOC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_FORMA" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MAN_COBERTURA" Nullable="true" />
+    <Property Type="String" Name="MAN_MODALIDAD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_PORMESES" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MAN_ESTADO" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXFIN" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_FECHAREALMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_ENVIOMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_RETORNOMANT" Nullable="true" Precision="16" />
+    <Property Type="String" Name="MAN_NUMFACTURA" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="MAN_TOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_SUBTOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_IVAFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="MAN_FECHAEMISIONFACTURA" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="ArranqueMantPreventivo_Result">
+    <Property Type="Int32" Name="MAN_ID" Nullable="false" />
+    <Property Type="String" Name="MAN_DESCRIPCION" Nullable="true" MaxLength="900" />
+    <Property Type="Int32" Name="TIP_ID_CORRECTIVO" Nullable="true" />
+    <Property Type="Int32" Name="TIP_ID_PREVENTIVO" Nullable="true" />
+    <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="90" />
+    <Property Type="DateTime" Name="MAN_FECHA" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="ACT_ID" Nullable="false" />
+    <Property Type="Boolean" Name="MAN_REALIZADO" Nullable="true" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXINI" Nullable="true" Precision="16" />
+    <Property Type="Decimal" Name="MAN_VALOR" Nullable="true" Precision="14" Scale="4" />
+    <Property Type="String" Name="MAN_NUMDOC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_FORMA" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MAN_COBERTURA" Nullable="true" />
+    <Property Type="String" Name="MAN_MODALIDAD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_PORMESES" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MAN_ESTADO" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXFIN" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_FECHAREALMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_ENVIOMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_RETORNOMANT" Nullable="true" Precision="16" />
+    <Property Type="String" Name="MAN_NUMFACTURA" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="MAN_TOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_SUBTOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_IVAFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="MAN_FECHAEMISIONFACTURA" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="FECHAENVIOMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="FECHAREGRESOMANT" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="aspnet_Membership_GetPassword_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="Column2" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aspnet_Membership_GetPasswordWithFormat_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="Column2" Nullable="true" />
+    <Property Type="String" Name="Column3" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="Column4" Nullable="true" />
+    <Property Type="Int32" Name="Column5" Nullable="true" />
+    <Property Type="Boolean" Name="Column6" Nullable="true" />
+    <Property Type="DateTime" Name="Column7" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Column8" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="aspnet_Membership_GetUserByName_Result">
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="PasswordQuestion" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" Precision="23" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+    <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="aspnet_Membership_GetUserByUserId_Result">
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="PasswordQuestion" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+    <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="aspnet_Profile_GetProperties_Result">
+    <Property Type="String" Name="PropertyNames" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="PropertyValuesString" Nullable="false" MaxLength="Max" />
+    <Property Type="Binary" Name="PropertyValuesBinary" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="aspnet_UsersInRoles_RemoveUsersFromRoles_Result">
+    <Property Type="String" Name="Column1" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="CORREOS_USUMANTENIMIENTO_Result">
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Rol" Nullable="false" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="ENVIA_MANTENIMIENTOSAUTO_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="codigobarras" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="marca" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="ubicacion1" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ubicacion2" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ubicacion3" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ubicacion4" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="centrocosto" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="custodio" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="diasvence" Nullable="true" />
+    <Property Type="DateTime" Name="fechaActual" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="fechaproxmant" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="diasfaltan_paravencer" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="LECTURA_MOVIMIENTOSPC01_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Codigo_de_Barras" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Codigo_Secundario" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Grupo" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Nombre_Bien" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Tipo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="custodio" Nullable="true" MaxLength="401" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="13" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" />
+    <Property Type="String" Name="Hora" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Portal" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Antena" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="MANTENIMIENTOPC01_Result">
+    <Property Type="String" Name="GRUPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="SUBGRUPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="UGE1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UGE2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UGE3" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UOR1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UOR2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UOR3" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CUSTODIO" Nullable="true" MaxLength="401" />
+    <Property Type="Int32" Name="ACT_ID" Nullable="false" />
+    <Property Type="String" Name="ACT_CODBARRAS" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="ACT_VALORCOMPRA" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CUS_ID1" Nullable="false" />
+    <Property Type="String" Name="ACT_TIPO" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="MANTENIMIENTOPC03_Result">
+    <Property Type="Int32" Name="MAN_ID" Nullable="false" />
+    <Property Type="String" Name="MAN_DESCRIPCION" Nullable="true" MaxLength="900" />
+    <Property Type="Int32" Name="TIP_ID_CORRECTIVO" Nullable="true" />
+    <Property Type="Int32" Name="TIP_ID_PREVENTIVO" Nullable="true" />
+    <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="90" />
+    <Property Type="DateTime" Name="MAN_FECHA" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="ACT_ID" Nullable="false" />
+    <Property Type="Boolean" Name="MAN_REALIZADO" Nullable="true" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXINI" Nullable="true" Precision="16" />
+    <Property Type="Decimal" Name="MAN_VALOR" Nullable="true" Precision="14" Scale="4" />
+    <Property Type="String" Name="MAN_NUMDOC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_FORMA" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MAN_COBERTURA" Nullable="true" />
+    <Property Type="String" Name="MAN_MODALIDAD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_PORMESES" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MAN_ESTADO" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXFIN" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_FECHAREALMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_ENVIOMANT" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_RETORNOMANT" Nullable="true" Precision="16" />
+    <Property Type="String" Name="MAN_NUMFACTURA" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="MAN_TOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_SUBTOTALFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAN_IVAFACTURA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="MAN_FECHAEMISIONFACTURA" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="MANTENIMIENTOPC05_Result">
+    <Property Type="String" Name="Código_de_Barras" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="N__Serie" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Marca" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Modelo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Grupo_Cuenta" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Subgrupo" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Descripción" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Centro_de_Costo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Custodio" Nullable="true" MaxLength="401" />
+    <Property Type="String" Name="EstadoM" Nullable="true" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="PARAMETROSPC01_Result">
+    <Property Type="String" Name="par_valor" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="par_codigo" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="REPORTEMOVILPC01_Result">
+    <Property Type="String" Name="Código_Barras" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Código_Secundario" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="Costo" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Ubicacion" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Descripción" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Marca" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Modelo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Serie" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Custodio" Nullable="false" MaxLength="401" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="usp_ArranqueMantenimientos_Result">
+    <Property Type="Int32" Name="TIP_ID_CORRECTIVO" Nullable="true" />
+    <Property Type="Int32" Name="TIP_ID_PREVENTIVO" Nullable="true" />
+    <Property Type="String" Name="MAN_PORMESES" Nullable="true" MaxLength="2" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXINI" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="MAN_FECHAPROXFIN" Nullable="true" Precision="16" />
+    <Property Type="String" Name="MAN_ESTADO" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="MAN_ID" Nullable="false" />
+    <Property Type="String" Name="MAN_FORMA" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MAN_COBERTURA" Nullable="true" />
+    <Property Type="String" Name="MAN_MODALIDAD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MAN_PORMESES1" Nullable="true" MaxLength="2" />
+    <Property Type="DateTime" Name="MAN_FECHAREALMANT" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="usp_getActivomantenimiento_Result">
+    <Property Type="String" Name="CODIGO" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="GRUPO" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="SUBGRUPO" Nullable="true" />
+    <Property Type="Int32" Name="DESCRIPCION" Nullable="true" />
+    <Property Type="String" Name="UG1" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="UG2" Nullable="true" />
+    <Property Type="Int32" Name="UG3" Nullable="true" />
+    <Property Type="String" Name="UO1" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="UO2" Nullable="true" />
+    <Property Type="Int32" Name="UO3" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_getDatosPdf_Result">
+    <Property Type="String" Name="CODIGO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tipo_Activo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SUBTIPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="CLASE" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="DETALLE" Nullable="true" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="MARCA" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="act_serie1" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="MODELO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="OBSERVACIONES" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="usp_getDatosPdf2_Result">
+    <Property Type="String" Name="CODIGO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SUBTIPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="CLASE" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="UbGeografica" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UbOrganica" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="cus_nombres" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Custodio" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="usp_getFiltroActivoPpc_Result">
+    <Property Type="Int32" Name="PocketPC" Nullable="true" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Codigo_Barras" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Dirección" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Organica_2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ubi__Organica_3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Custodio" Nullable="false" MaxLength="401" />
+    <Property Type="String" Name="Grupo_Cuenta" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="Subgrupo" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="usp_GetReporteGlobalAval_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FECHA_DE_INGRESO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="DIGITADOR" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="FECHA_DE_INVENTARIO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="PERITO" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="HOJA" Nullable="true" MaxLength="13" />
+    <Property Type="String" Name="TIPO_ACTIVO" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UBICACION_GEOGRAFICA_1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UBICACION_GEOGRAFICA_2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UBICACION_GEOGRAFICA_3" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PISO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CENTRO_DE_COSTO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UBICACION_ORGANICA_1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UBICACION_ORGANICA_2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CUSTODIO" Nullable="true" MaxLength="401" />
+    <Property Type="String" Name="RESPONSABLE" Nullable="true" MaxLength="401" />
+    <Property Type="String" Name="CODIGO_DE_BARRAS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CODIGO_DE_BARRAS_PADRE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GRUPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="SUBGRUPO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="CODIGO_1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ESTADO_1" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="ESTADO_2" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="ESTADO_3" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FOTO" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_FOTO2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_DOC1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACT_DOC2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DESCRIPCION_LARGA" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OBSERVACIONES_AVALUAC" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="OBSERVACIONES" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="MARCA" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="MODELO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="SERIE" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="AÑO" Nullable="true" />
+    <Property Type="String" Name="COLOR" Nullable="true" MaxLength="120" />
+    <Property Type="String" Name="ESTRUCTURA" Nullable="true" MaxLength="120" />
+    <Property Type="String" Name="COMPONENTE" Nullable="true" MaxLength="120" />
+  </ComplexType>
+  <ComplexType Name="usp_getReporteMantenimiento_Result">
+    <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="16" />
+    <Property Type="String" Name="Técnico" Nullable="false" MaxLength="90" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="90" />
+    <Property Type="String" Name="Descripción" Nullable="true" MaxLength="900" />
+  </ComplexType>
+  <ComplexType Name="usp_getReporteTransfer_Result">
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Ub__Geo__1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ub__Geo__2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ub__Geo__3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Centro_de_Costo" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ub__Org__2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Ub__Org__3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Custodio" Nullable="false" MaxLength="401" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Fase" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Transferencia" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="usp_getUgeAll3Level1_Result">
+    <Property Type="String" Name="uge_NOMBRE" Nullable="false" MaxLength="250" />
+    <Property Type="Int32" Name="uge_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_getUgeAll3Level2_Result">
+    <Property Type="String" Name="uge_NOMBRE" Nullable="false" MaxLength="504" />
+    <Property Type="Int32" Name="uge_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_getUgeAll3Level3_Result">
+    <Property Type="String" Name="uge_NOMBRE" Nullable="false" MaxLength="758" />
+    <Property Type="Int32" Name="uge_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_ReporteHistoricoMantenimiento_Result">
+    <Property Type="String" Name="Código_de_Barras" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Código_Secundario" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Detalle_Mant__Realizado" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="Tipo_de_Mantenimiento" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Fecha_Envio_a_Mantenimiento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Fecha_Regreso_de_Mantenimiento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Fecha_Incio_Mant__Preventivo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Fecha_Próximo_Mant__Preventivo" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="Valor_Mant_" Nullable="true" Precision="14" Scale="4" />
+    <Property Type="String" Name="Forma_de_Mantenimiento" Nullable="false" MaxLength="26" />
+    <Property Type="String" Name="Cobertura" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Modalidad" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Cobertura_por_Meses" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nº_Factura" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Subtotal_Factura" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="I_V_A_" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total_Factura" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Fecha_Emisión_Factura" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Generado_por__USUARIO_" Nullable="false" MaxLength="90" />
+  </ComplexType>
+  <ComplexType Name="usp_SummaryLoginS_Result">
+    <Property Type="Int32" Name="Ultimas24H" Nullable="true" />
+    <Property Type="Int32" Name="UltimaSemana" Nullable="true" />
+    <Property Type="Int32" Name="UltimoMes" Nullable="true" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="ACRESERVA">
+    <Key>
+      <PropertyRef Name="ACT_ID" />
+    </Key>
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="ACTA">
+    <Key>
+      <PropertyRef Name="Act_id" />
+    </Key>
+    <Property Name="Act_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Act_UsuarioGenera" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Act_FechaGenera" Type="DateTime" Precision="0" />
+    <Property Name="Act_Nombre" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+    <Property Name="Act_Direccion" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+    <Property Name="Act_ubicacion" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+    <Property Name="Act_CustodioId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ANIO">
+    <Key>
+      <PropertyRef Name="ANI_ID" />
+    </Key>
+    <Property Name="ANI_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="HVALLESModel.FK__aspnet_Me__Appli__373B3228" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="HVALLESModel.FK__aspnet_Pa__Appli__39237A9A" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="HVALLESModel.FK__aspnet_Ro__Appli__3DE82FB7" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="HVALLESModel.FK__aspnet_Us__Appli__3EDC53F0" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="HVALLESModel.FK__aspnet_Me__Appli__373B3228" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="HVALLESModel.FK__aspnet_Me__UserI__382F5661" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="HVALLESModel.FK__aspnet_Pa__Appli__39237A9A" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="HVALLESModel.FK__aspnet_Pe__PathI__3A179ED3" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="HVALLESModel.FK__aspnet_Pe__PathI__3B0BC30C" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="HVALLESModel.FK__aspnet_Pe__PathI__3A179ED3" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="HVALLESModel.FK__aspnet_Pe__PathI__3B0BC30C" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="HVALLESModel.FK__aspnet_Pe__UserI__3BFFE745" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Users" Relationship="HVALLESModel.FK__aspnet_Pr__UserI__3CF40B7E" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="HVALLESModel.FK__aspnet_Ro__Appli__3DE82FB7" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="HVALLESModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="HVALLESModel.FK__aspnet_Us__Appli__3EDC53F0" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="HVALLESModel.FK__aspnet_Me__UserI__382F5661" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="HVALLESModel.FK__aspnet_Pe__UserI__3BFFE745" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="HVALLESModel.FK__aspnet_Pr__UserI__3CF40B7E" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="HVALLESModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BLOQUEO_PASSWORD">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hora_bloqueo" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="hora_desbloqueo" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_bloqueo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CARACTERISTICA">
+    <Key>
+      <PropertyRef Name="CAR_ID" />
+    </Key>
+    <Property Name="CAR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="CFA_ID" Type="Int32" Nullable="false" />
+    <Property Name="CAR_VALOR" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UNI_ID" Type="Int32" />
+    <Property Name="CAR_DEL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CFAMILIA" Relationship="HVALLESModel.FK_CARACTERISTICA_CFAMILIA" FromRole="CARACTERISTICA" ToRole="CFAMILIA" />
+    <NavigationProperty Name="UNIDAD" Relationship="HVALLESModel.FK_CARACTERISTICA_UNIDAD" FromRole="CARACTERISTICA" ToRole="UNIDAD" />
+    <NavigationProperty Name="ACTIVO" Relationship="HVALLESModel.FK_CARACTERISTICA_ACTIVO1" FromRole="CARACTERISTICA" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="CARGO">
+    <Key>
+      <PropertyRef Name="CGO_ID" />
+    </Key>
+    <Property Name="CGO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CGO_NOMBRE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUSTODIOs" Relationship="HVALLESModel.FK_CUSTODIO_CARGO" FromRole="CARGO" ToRole="CUSTODIO" />
+  </EntityType>
+  <EntityType Name="CCAR">
+    <Key>
+      <PropertyRef Name="CCA_ID" />
+    </Key>
+    <Property Name="CCA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CCA_NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CFAMILIA">
+    <Key>
+      <PropertyRef Name="CFA_ID" />
+    </Key>
+    <Property Name="CFA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GRU_ID" Type="Int32" Nullable="false" />
+    <Property Name="CFA_NOMBRE" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CFA_ORDEN" Type="Int32" Nullable="false" />
+    <Property Name="CFA_UNIDADES" Type="Boolean" Nullable="false" />
+    <Property Name="CFA_OBLIGATORIO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="CARACTERISTICAs" Relationship="HVALLESModel.FK_CARACTERISTICA_CFAMILIA" FromRole="CFAMILIA" ToRole="CARACTERISTICA" />
+    <NavigationProperty Name="GRUPO" Relationship="HVALLESModel.FK_CFAMILIA_GRUPO" FromRole="CFAMILIA" ToRole="GRUPO" />
+  </EntityType>
+  <EntityType Name="CODIGO">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="COD_PREFIJO" />
+      <PropertyRef Name="COD_SUFIJO" />
+      <PropertyRef Name="COD_SECUENCIAL" />
+      <PropertyRef Name="COD_VERIFICADOR" />
+    </Key>
+    <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COD_PREFIJO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COD_SUFIJO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COD_SECUENCIAL" Type="Int32" Nullable="false" />
+    <Property Name="COD_VERIFICADOR" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CODIGOMASIVO">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="COD_PREFIJO" />
+      <PropertyRef Name="COD_SUFIJO" />
+      <PropertyRef Name="COD_SECUENCIAL" />
+      <PropertyRef Name="COD_VERIFICADOR" />
+    </Key>
+    <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COD_PREFIJO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COD_SUFIJO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COD_SECUENCIAL" Type="Int32" Nullable="false" />
+    <Property Name="COD_VERIFICADOR" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COLOR">
+    <Key>
+      <PropertyRef Name="COL_ID" />
+    </Key>
+    <Property Name="COL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COL_NOMBRE" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_COLOR" FromRole="COLOR" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="CUSTODIO">
+    <Key>
+      <PropertyRef Name="CUS_ID" />
+    </Key>
+    <Property Name="CUS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUS_CODIGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_APELLIDOS" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_NOMBRES" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_CEDULA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_TELEFONOFIJO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_EXT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_CELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_FOTO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_EMAIL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CGO_ID" Type="Int32" />
+    <Property Name="CUS_ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CARGO" Relationship="HVALLESModel.FK_CUSTODIO_CARGO" FromRole="CUSTODIO" ToRole="CARGO" />
+    <NavigationProperty Name="XCUORs" Relationship="HVALLESModel.FK_XCUOR_CUSTODIO" FromRole="CUSTODIO" ToRole="XCUOR" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_CUSTODIO" FromRole="CUSTODIO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="DEPRECIACION">
+    <Key>
+      <PropertyRef Name="DEP_ID" />
+    </Key>
+    <Property Name="DEP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEP_VIDAUTIL" Type="Int32" Nullable="false" />
+    <Property Name="DEP_VALORRESIDUAL" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_SALDOXDEPRE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_DEPREACUM" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_PERTRANS" Type="Int32" Nullable="false" />
+    <Property Name="DEP_PERREMA" Type="Int32" Nullable="false" />
+    <Property Name="DEP_DEPREPERIODO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_FECHAPROX" Type="DateTime" Precision="0" />
+    <Property Name="DEP_TIPO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEP_CCOSTO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_GRUPO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_OBS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_BAJA" Type="Boolean" />
+    <NavigationProperty Name="ACTIVO" Relationship="HVALLESModel.FK_DEPRECIACION_ACTIVO" FromRole="DEPRECIACION" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="DEPRECIACIONSRI">
+    <Key>
+      <PropertyRef Name="DEP_ID" />
+    </Key>
+    <Property Name="DEP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEP_VIDAUTIL" Type="Int32" Nullable="false" />
+    <Property Name="DEP_VALORRESIDUAL" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_SALDOXDEPRE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_DEPREACUM" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_PERTRANS" Type="Int32" Nullable="false" />
+    <Property Name="DEP_PERREMA" Type="Int32" Nullable="false" />
+    <Property Name="DEP_DEPREPERIODO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DEP_FECHAPROX" Type="DateTime" Precision="0" />
+    <Property Name="DEP_TIPO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEP_CCOSTO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_GRUPO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_OBS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEP_BAJA" Type="Boolean" />
+    <Property Name="DEP_FECHABAJA" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ACTIVO" Relationship="HVALLESModel.FK_DEPRECIACIONSRI_ACTIVO" FromRole="DEPRECIACIONSRI" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="DGENERADA">
+    <Key>
+      <PropertyRef Name="DGE_ID" />
+    </Key>
+    <Property Name="DGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DGE_GENERADA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DGE_SIGUIENTE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DGE_TIPO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DGE_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DGENERADASRI">
+    <Key>
+      <PropertyRef Name="DGE_ID" />
+    </Key>
+    <Property Name="DGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DGE_GENERADA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DGE_SIGUIENTE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DGE_TIPO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DGE_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_NOMBRE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_PREFIJO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_TOTALDIGITOS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="EST_ID" />
+    </Key>
+    <Property Name="EST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EST_NOMBRE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EST_GRUPO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ORDEN" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_ESTADO" FromRole="ESTADO" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes1" Relationship="HVALLESModel.FK_ACTIVO_ESTADO1" FromRole="ESTADO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="ESTRUCOMP">
+    <Key>
+      <PropertyRef Name="ECO_ID" />
+    </Key>
+    <Property Name="ECO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ECO_NOMBRE" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_ECO1" FromRole="ESTRUCOMP" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes1" Relationship="HVALLESModel.FK_ACTIVO_ECO2" FromRole="ESTRUCOMP" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="GRUPO">
+    <Key>
+      <PropertyRef Name="GRU_ID" />
+    </Key>
+    <Property Name="GRU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GRU_NOMBRE" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="GRU_PADRE" Type="Int32" Nullable="false" />
+    <Property Name="GRU_NIVEL" Type="Int32" Nullable="false" />
+    <Property Name="GRU_CODIGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GRU_CTA1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GRU_CTA2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GRU_CTA3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CFAMILIAs" Relationship="HVALLESModel.FK_CFAMILIA_GRUPO" FromRole="GRUPO" ToRole="CFAMILIA" />
+    <NavigationProperty Name="GRUPOSRI" Relationship="HVALLESModel.FK_GRUPOSRI_GRUPO" FromRole="GRUPO" ToRole="GRUPOSRI" />
+    <NavigationProperty Name="PROVEEDORs" Relationship="HVALLESModel.FK_PROVEEDOR_GRUPO" FromRole="GRUPO" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_GRUPO" FromRole="GRUPO" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes1" Relationship="HVALLESModel.FK_ACTIVO_GRUPO2" FromRole="GRUPO" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes2" Relationship="HVALLESModel.FK_ACTIVO_GRUPO3" FromRole="GRUPO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="GRUPOSRI">
+    <Key>
+      <PropertyRef Name="GRU_ID" />
+    </Key>
+    <Property Name="GRU_ID" Type="Int32" Nullable="false" />
+    <Property Name="GRU_VUSRI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GRUPO" Relationship="HVALLESModel.FK_GRUPOSRI_GRUPO" FromRole="GRUPOSRI" ToRole="GRUPO" />
+  </EntityType>
+  <EntityType Name="HCODIGO">
+    <Key>
+      <PropertyRef Name="HCO_ID" />
+    </Key>
+    <Property Name="HCO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HCO_FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HCO_USUARIO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="HCO_TIPO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCO_COD1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCO_COD2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCO_NUMERO" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HISTORIAL_PASSWORD">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechacreacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cont" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HUCUSTODIO">
+    <Key>
+      <PropertyRef Name="HUC_ID" />
+    </Key>
+    <Property Name="HUC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HUC_FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="UGE_ID1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_ID2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_ID3" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_ID4" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_ID1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_ID2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_ID3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_ID1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_ID2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ID1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ID2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ID3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EST_MANT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="INVALIDCREDENTIALSLOG">
+    <Key>
+      <PropertyRef Name="InvalidCredentialsLogID" />
+    </Key>
+    <Property Name="InvalidCredentialsLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="IsLockedOut" Type="Boolean" />
+    <Property Name="IPAddress" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LoginAttemptDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="MACTIVO">
+    <Key>
+      <PropertyRef Name="MAC_ID" />
+    </Key>
+    <Property Name="MAC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAC_FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ACCION" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MANTENIMIENTO">
+    <Key>
+      <PropertyRef Name="MAN_ID" />
+    </Key>
+    <Property Name="MAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAN_DESCRIPCION" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TIP_ID_CORRECTIVO" Type="Int32" />
+    <Property Name="TIP_ID_PREVENTIVO" Type="Int32" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="MAN_FECHA" Type="DateTime" Precision="0" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="MAN_REALIZADO" Type="Boolean" />
+    <Property Name="MAN_FECHAPROXINI" Type="DateTime" Precision="0" />
+    <Property Name="MAN_VALOR" Type="Decimal" Precision="14" Scale="4" />
+    <Property Name="MAN_NUMDOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAN_FORMA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAN_COBERTURA" Type="Int32" />
+    <Property Name="MAN_MODALIDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAN_PORMESES" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="MAN_ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MAN_FECHAPROXFIN" Type="DateTime" Precision="0" />
+    <Property Name="MAN_FECHAREALMANT" Type="DateTime" Precision="0" />
+    <Property Name="MAN_ENVIOMANT" Type="DateTime" Precision="0" />
+    <Property Name="MAN_RETORNOMANT" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ACTIVO" Relationship="HVALLESModel.FK_MANTENIMIENTO_ACTIVO" FromRole="MANTENIMIENTO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="MAR_ID" />
+    </Key>
+    <Property Name="MAR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAR_NOMBRE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MODELOes" Relationship="HVALLESModel.FK_MODELO_MARCA" FromRole="MARCA" ToRole="MODELO" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_MARCA" FromRole="MARCA" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="MODELO">
+    <Key>
+      <PropertyRef Name="MOD_ID" />
+    </Key>
+    <Property Name="MOD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MOD_NOMBRE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MAR_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MARCA" Relationship="HVALLESModel.FK_MODELO_MARCA" FromRole="MODELO" ToRole="MARCA" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_MODELO" FromRole="MODELO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTO_RFID">
+    <Key>
+      <PropertyRef Name="cod_itemxmov" />
+    </Key>
+    <Property Name="cod_itemxmov" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="act_id" Type="Int32" Nullable="false" />
+    <Property Name="mov_codbarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mov_codLogicard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mov_cusid" Type="Int32" Nullable="false" />
+    <Property Name="mov_fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="mov_hora" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mov_ip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mov_portal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mov_estado" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="mov_antenna" Type="Int32" />
+    <Property Name="mov_NumAdicional1" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="mov_NumAdicional2" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="mov_NumAdicional3" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="mov_StrAdicional1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mov_StrAdicional2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mov_StrAdicional3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PAI">
+    <Key>
+      <PropertyRef Name="PAI_ID" />
+    </Key>
+    <Property Name="PAI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAI_NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PAI_NIVEL" Type="Int32" Nullable="false" />
+    <Property Name="PAI_PADRE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PROVEEDORs" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS" FromRole="PAI" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="PROVEEDORs1" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS1" FromRole="PAI" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="PROVEEDORs2" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS2" FromRole="PAI" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="PARAMETRO">
+    <Key>
+      <PropertyRef Name="par_id" />
+    </Key>
+    <Property Name="par_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="par_nombre" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="par_valor" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="par_codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="POTENCIA_ANTENA">
+    <Key>
+      <PropertyRef Name="potenciaID" />
+    </Key>
+    <Property Name="potenciaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="potencia" Type="Int32" />
+    <Property Name="antena" Type="Int32" />
+    <Property Name="reader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sensibilidad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PPC">
+    <Key>
+      <PropertyRef Name="PPC_NUMERO" />
+    </Key>
+    <Property Name="PPC_NUMERO" Type="Int32" Nullable="false" />
+    <Property Name="PPC_SERIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="PRO_ID" />
+    </Key>
+    <Property Name="PRO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRO_RAZON" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_NOMBRE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_RUC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_CONTACTO" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_DIRECCION" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_TELEFONOF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_CELULAR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_EMAIL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_CREDITO" Type="Int32" Nullable="false" />
+    <Property Name="PRO_OBSERVACIONES" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_FECHAREGISTRO" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="GRU_ID" Type="Int32" Nullable="false" />
+    <Property Name="PAI_ID1" Type="Int32" Nullable="false" />
+    <Property Name="PAI_ID2" Type="Int32" />
+    <Property Name="PAI_ID3" Type="Int32" />
+    <NavigationProperty Name="GRUPO" Relationship="HVALLESModel.FK_PROVEEDOR_GRUPO" FromRole="PROVEEDOR" ToRole="GRUPO" />
+    <NavigationProperty Name="PAI" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS" FromRole="PROVEEDOR" ToRole="PAI" />
+    <NavigationProperty Name="PAI1" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS1" FromRole="PROVEEDOR" ToRole="PAI" />
+    <NavigationProperty Name="PAI2" Relationship="HVALLESModel.FK_PROVEEDOR_PAIS2" FromRole="PROVEEDOR" ToRole="PAI" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_PROVEEDOR" FromRole="PROVEEDOR" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="REPORTE">
+    <Key>
+      <PropertyRef Name="REP_CODIGO" />
+    </Key>
+    <Property Name="REP_CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REP_CODBARRAS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_ID" Type="Int32" />
+    <Property Name="REP_FECHA" Type="DateTime" Precision="0" />
+    <Property Name="REP_ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_ID" Type="Int32" />
+    <Property Name="REP_USUARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ROLPPC">
+    <Key>
+      <PropertyRef Name="RPP_ID" />
+    </Key>
+    <Property Name="RPP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RPP_NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USUPPCs" Relationship="HVALLESModel.USUROLPPC" FromRole="ROLPPC" ToRole="USUPPC" />
+  </EntityType>
+  <EntityType Name="TIPO_SEGURO">
+    <Key>
+      <PropertyRef Name="SEG_ID" />
+    </Key>
+    <Property Name="SEG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEG_NOMBRE" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_TIPOSEGURO" FromRole="TIPO_SEGURO" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="TIPOMAN">
+    <Key>
+      <PropertyRef Name="TIP_ID" />
+    </Key>
+    <Property Name="TIP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIP_NOMBRE" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UGEOGRAFICA">
+    <Key>
+      <PropertyRef Name="UGE_ID" />
+    </Key>
+    <Property Name="UGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UGE_NOMBRE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_PADRE" Type="Int32" Nullable="false" />
+    <Property Name="UGE_NIVEL" Type="Int32" Nullable="false" />
+    <Property Name="UGE_READERIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_READERNOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_TIPOREADER" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="UORGANICAs" Relationship="HVALLESModel.FK_UORGANICA_UGEOGRAFICA" FromRole="UGEOGRAFICA" ToRole="UORGANICA" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA" FromRole="UGEOGRAFICA" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes1" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA1" FromRole="UGEOGRAFICA" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes2" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA2" FromRole="UGEOGRAFICA" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes3" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA3" FromRole="UGEOGRAFICA" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="UNIDAD">
+    <Key>
+      <PropertyRef Name="UNI_ID" />
+    </Key>
+    <Property Name="UNI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UNI_SIMBOLO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CARACTERISTICAs" Relationship="HVALLESModel.FK_CARACTERISTICA_UNIDAD" FromRole="UNIDAD" ToRole="CARACTERISTICA" />
+  </EntityType>
+  <EntityType Name="UORGANICA">
+    <Key>
+      <PropertyRef Name="UOR_ID" />
+    </Key>
+    <Property Name="UOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UOR_NOMBRE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_PADRE" Type="Int32" Nullable="false" />
+    <Property Name="UOR_NIVEL" Type="Int32" Nullable="false" />
+    <Property Name="UGE_ID" Type="Int32" />
+    <Property Name="UOR_CODIGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_READERIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UOR_READERNOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UGEOGRAFICA" Relationship="HVALLESModel.FK_UORGANICA_UGEOGRAFICA" FromRole="UORGANICA" ToRole="UGEOGRAFICA" />
+    <NavigationProperty Name="XCUORs" Relationship="HVALLESModel.FK_XCUOR_UORGANICA" FromRole="UORGANICA" ToRole="XCUOR" />
+    <NavigationProperty Name="ACTIVOes" Relationship="HVALLESModel.FK_ACTIVO_UORGANICA2" FromRole="UORGANICA" ToRole="ACTIVO" />
+    <NavigationProperty Name="ACTIVOes1" Relationship="HVALLESModel.FK_ACTIVO_UORGANICA3" FromRole="UORGANICA" ToRole="ACTIVO" />
+  </EntityType>
+  <EntityType Name="USUPPC">
+    <Key>
+      <PropertyRef Name="UPP_USUARIO" />
+    </Key>
+    <Property Name="UPP_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPP_CLAVE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ROLPPCs" Relationship="HVALLESModel.USUROLPPC" FromRole="USUPPC" ToRole="ROLPPC" />
+  </EntityType>
+  <EntityType Name="XCUOR">
+    <Key>
+      <PropertyRef Name="XCU_ID" />
+    </Key>
+    <Property Name="XCU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUS_ID" Type="Int32" Nullable="false" />
+    <Property Name="UOR_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CUSTODIO" Relationship="HVALLESModel.FK_XCUOR_CUSTODIO" FromRole="XCUOR" ToRole="CUSTODIO" />
+    <NavigationProperty Name="UORGANICA" Relationship="HVALLESModel.FK_XCUOR_UORGANICA" FromRole="XCUOR" ToRole="UORGANICA" />
+  </EntityType>
+  <EntityType Name="HFOTO">
+    <Key>
+      <PropertyRef Name="HFO_ID" />
+      <PropertyRef Name="HFO_FECHA" />
+      <PropertyRef Name="ACT_ID" />
+      <PropertyRef Name="HFO_FOTO1" />
+      <PropertyRef Name="CUS_ID1" />
+    </Key>
+    <Property Name="HFO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HFO_FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="USERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="HFO_FOTO1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HFO_FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_ID1" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_ID2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="HFO_FOTO3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__373B3228">
+    <End Type="HVALLESModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__39237A9A">
+    <End Type="HVALLESModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__3DE82FB7">
+    <End Type="HVALLESModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__3EDC53F0">
+    <End Type="HVALLESModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__382F5661">
+    <End Type="HVALLESModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__3A179ED3">
+    <End Type="HVALLESModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__3B0BC30C">
+    <End Type="HVALLESModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
+    <End Type="HVALLESModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__3BFFE745">
+    <End Type="HVALLESModel.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+    <End Type="HVALLESModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__3CF40B7E">
+    <End Type="HVALLESModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="HVALLESModel.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_CFAMILIA">
+    <End Type="HVALLESModel.CFAMILIA" Role="CFAMILIA" Multiplicity="1" />
+    <End Type="HVALLESModel.CARACTERISTICA" Role="CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFAMILIA">
+        <PropertyRef Name="CFA_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="CFA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_UNIDAD">
+    <End Type="HVALLESModel.UNIDAD" Role="UNIDAD" Multiplicity="0..1" />
+    <End Type="HVALLESModel.CARACTERISTICA" Role="CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UNIDAD">
+        <PropertyRef Name="UNI_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="UNI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTODIO_CARGO">
+    <End Type="HVALLESModel.CARGO" Role="CARGO" Multiplicity="0..1" />
+    <End Type="HVALLESModel.CUSTODIO" Role="CUSTODIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARGO">
+        <PropertyRef Name="CGO_ID" />
+      </Principal>
+      <Dependent Role="CUSTODIO">
+        <PropertyRef Name="CGO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CFAMILIA_GRUPO">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.CFAMILIA" Role="CFAMILIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="CFAMILIA">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XCUOR_CUSTODIO">
+    <End Type="HVALLESModel.CUSTODIO" Role="CUSTODIO" Multiplicity="1" />
+    <End Type="HVALLESModel.XCUOR" Role="XCUOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTODIO">
+        <PropertyRef Name="CUS_ID" />
+      </Principal>
+      <Dependent Role="XCUOR">
+        <PropertyRef Name="CUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRUPOSRI_GRUPO">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.GRUPOSRI" Role="GRUPOSRI" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="GRUPOSRI">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_GRUPO">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MODELO_MARCA">
+    <End Type="HVALLESModel.MARCA" Role="MARCA" Multiplicity="1" />
+    <End Type="HVALLESModel.MODELO" Role="MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARCA">
+        <PropertyRef Name="MAR_ID" />
+      </Principal>
+      <Dependent Role="MODELO">
+        <PropertyRef Name="MAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS">
+    <End Type="HVALLESModel.PAI" Role="PAI" Multiplicity="1" />
+    <End Type="HVALLESModel.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAI">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS1">
+    <End Type="HVALLESModel.PAI" Role="PAI" Multiplicity="0..1" />
+    <End Type="HVALLESModel.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAI">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS2">
+    <End Type="HVALLESModel.PAI" Role="PAI" Multiplicity="0..1" />
+    <End Type="HVALLESModel.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAI">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UORGANICA_UGEOGRAFICA">
+    <End Type="HVALLESModel.UGEOGRAFICA" Role="UGEOGRAFICA" Multiplicity="0..1" />
+    <End Type="HVALLESModel.UORGANICA" Role="UORGANICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="UORGANICA">
+        <PropertyRef Name="UGE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XCUOR_UORGANICA">
+    <End Type="HVALLESModel.UORGANICA" Role="UORGANICA" Multiplicity="1" />
+    <End Type="HVALLESModel.XCUOR" Role="XCUOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="XCUOR">
+        <PropertyRef Name="UOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Type="HVALLESModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <End Type="HVALLESModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+  </Association>
+  <Association Name="USUROLPPC">
+    <End Type="HVALLESModel.ROLPPC" Role="ROLPPC" Multiplicity="*" />
+    <End Type="HVALLESModel.USUPPC" Role="USUPPC" Multiplicity="*" />
+  </Association>
+  <EntityType Name="ACTIVO">
+    <Key>
+      <PropertyRef Name="ACT_ID" />
+    </Key>
+    <Property Name="ACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_FECHACREACION" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ACT_FECHAINIDEPRE" Type="DateTime" Precision="0" />
+    <Property Name="ACT_DEPRECIABLESRI" Type="Boolean" />
+    <Property Name="ACT_DEPRECIABLE" Type="Boolean" />
+    <Property Name="ACT_DEPRECIADOSRI" Type="Boolean" />
+    <Property Name="ACT_DEPRECIADONIIF" Type="Boolean" />
+    <Property Name="ACT_FECHAINIOPER" Type="DateTime" Precision="0" />
+    <Property Name="ACT_FECHAINIDEPRENIIF" Type="DateTime" Precision="0" />
+    <Property Name="ACT_FECHABAJA" Type="DateTime" Precision="0" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_TIPO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_CODBARRAS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_CODBARRASPADRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_CODIGO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GRU_ID1" Type="Int32" Nullable="false" />
+    <Property Name="GRU_ID2" Type="Int32" Nullable="false" />
+    <Property Name="GRU_ID3" Type="Int32" Nullable="false" />
+    <Property Name="ACT_FOTO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_DOC1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_DOC2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UGE_ID1" Type="Int32" Nullable="false" />
+    <Property Name="UGE_ID2" Type="Int32" Nullable="false" />
+    <Property Name="UGE_ID3" Type="Int32" Nullable="false" />
+    <Property Name="UGE_ID4" Type="Int32" Nullable="false" />
+    <Property Name="UOR_ID1" Type="Int32" Nullable="false" />
+    <Property Name="UOR_ID2" Type="Int32" Nullable="false" />
+    <Property Name="UOR_ID3" Type="Int32" Nullable="false" />
+    <Property Name="CUS_ID1" Type="Int32" Nullable="false" />
+    <Property Name="CUS_ID2" Type="Int32" />
+    <Property Name="EST_ID1" Type="Int32" Nullable="false" />
+    <Property Name="EST_ID2" Type="Int32" />
+    <Property Name="EST_ID3" Type="Int32" />
+    <Property Name="MAR_ID" Type="Int32" Nullable="false" />
+    <Property Name="MOD_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACT_SERIE1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="COL_ID" Type="Int32" />
+    <Property Name="ECO_ID1" Type="Int32" />
+    <Property Name="ECO_ID2" Type="Int32" />
+    <Property Name="PRO_ID" Type="Int32" />
+    <Property Name="ACT_TIPOING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_NUMFACT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ACT_FECHACOMPRA" Type="DateTime" Precision="0" />
+    <Property Name="ACT_VALORCOMPRA" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACT_ANIO" Type="Int32" />
+    <Property Name="ACT_VIDAUTIL" Type="Int32" />
+    <Property Name="ACT_VIDAUTILNIIF" Type="Int32" />
+    <Property Name="ACT_VALORRESIDUALNIIF" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACT_GARANTIA" Type="Boolean" />
+    <Property Name="ACT_FECHAGARANTIAVENCE" Type="DateTime" Precision="0" />
+    <Property Name="ACT_OBSERVACIONES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_TRANSFEROK" Type="Boolean" Nullable="false" />
+    <Property Name="ACT_PPC" Type="Int32" />
+    <Property Name="ACT_H1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_H2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_PE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_OBSERVACIONES2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_TIPOBAJA" Type="Int32" />
+    <Property Name="ACT_OBSBAJA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_BAJAPROCESADA" Type="Boolean" />
+    <Property Name="ACT_BAJAPROCESADASRI" Type="Boolean" />
+    <Property Name="ACT_RESUMEN" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_VALORREPO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACT_VALORRAZONABLE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACT_FECHAINVENTARIO" Type="DateTime" Precision="0" />
+    <Property Name="ACT_CODRFID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_STRADICIONAL3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ACT_RETIQUETAR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_AUTRFID" Type="Int32" />
+    <Property Name="ACT_FILRFID" Type="Int32" />
+    <Property Name="ACT_TIPRFID" Type="Int32" />
+    <Property Name="ACT_SEGURO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_TIPOSEGURO" Type="Int32" />
+    <Property Name="ACT_ESTADOMANT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_FECHAENVIOMANT" Type="DateTime" Precision="0" />
+    <Property Name="ACT_FECHAREGRESOMANT" Type="DateTime" Precision="0" />
+    <Property Name="ACT_DESCRIPCIONLARGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_NUMPOLIZA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT_VIGENCIAPOLIZAMESES" Type="Int32" />
+    <Property Name="ACT_FECHAEMISIONPOLIZA" Type="DateTime" Precision="0" />
+    <Property Name="ACT_FECHAVENCEPOLIZA" Type="DateTime" Precision="0" />
+    <Property Name="ACT_VALORASEGURADO" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="COLOR" Relationship="HVALLESModel.FK_ACTIVO_COLOR" FromRole="ACTIVO" ToRole="COLOR" />
+    <NavigationProperty Name="CUSTODIO" Relationship="HVALLESModel.FK_ACTIVO_CUSTODIO" FromRole="ACTIVO" ToRole="CUSTODIO" />
+    <NavigationProperty Name="ESTRUCOMP" Relationship="HVALLESModel.FK_ACTIVO_ECO1" FromRole="ACTIVO" ToRole="ESTRUCOMP" />
+    <NavigationProperty Name="ESTRUCOMP1" Relationship="HVALLESModel.FK_ACTIVO_ECO2" FromRole="ACTIVO" ToRole="ESTRUCOMP" />
+    <NavigationProperty Name="ESTADO" Relationship="HVALLESModel.FK_ACTIVO_ESTADO" FromRole="ACTIVO" ToRole="ESTADO" />
+    <NavigationProperty Name="ESTADO1" Relationship="HVALLESModel.FK_ACTIVO_ESTADO1" FromRole="ACTIVO" ToRole="ESTADO" />
+    <NavigationProperty Name="GRUPO" Relationship="HVALLESModel.FK_ACTIVO_GRUPO" FromRole="ACTIVO" ToRole="GRUPO" />
+    <NavigationProperty Name="GRUPO1" Relationship="HVALLESModel.FK_ACTIVO_GRUPO2" FromRole="ACTIVO" ToRole="GRUPO" />
+    <NavigationProperty Name="GRUPO2" Relationship="HVALLESModel.FK_ACTIVO_GRUPO3" FromRole="ACTIVO" ToRole="GRUPO" />
+    <NavigationProperty Name="MARCA" Relationship="HVALLESModel.FK_ACTIVO_MARCA" FromRole="ACTIVO" ToRole="MARCA" />
+    <NavigationProperty Name="MODELO" Relationship="HVALLESModel.FK_ACTIVO_MODELO" FromRole="ACTIVO" ToRole="MODELO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="HVALLESModel.FK_ACTIVO_PROVEEDOR" FromRole="ACTIVO" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="TIPO_SEGURO" Relationship="HVALLESModel.FK_ACTIVO_TIPOSEGURO" FromRole="ACTIVO" ToRole="TIPO_SEGURO" />
+    <NavigationProperty Name="UGEOGRAFICA" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA" FromRole="ACTIVO" ToRole="UGEOGRAFICA" />
+    <NavigationProperty Name="UGEOGRAFICA1" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA1" FromRole="ACTIVO" ToRole="UGEOGRAFICA" />
+    <NavigationProperty Name="UGEOGRAFICA2" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA2" FromRole="ACTIVO" ToRole="UGEOGRAFICA" />
+    <NavigationProperty Name="UGEOGRAFICA3" Relationship="HVALLESModel.FK_ACTIVO_UGEOGRAFICA3" FromRole="ACTIVO" ToRole="UGEOGRAFICA" />
+    <NavigationProperty Name="UORGANICA" Relationship="HVALLESModel.FK_ACTIVO_UORGANICA2" FromRole="ACTIVO" ToRole="UORGANICA" />
+    <NavigationProperty Name="UORGANICA1" Relationship="HVALLESModel.FK_ACTIVO_UORGANICA3" FromRole="ACTIVO" ToRole="UORGANICA" />
+    <NavigationProperty Name="CARACTERISTICAs" Relationship="HVALLESModel.FK_CARACTERISTICA_ACTIVO1" FromRole="ACTIVO" ToRole="CARACTERISTICA" />
+    <NavigationProperty Name="DEPRECIACIONs" Relationship="HVALLESModel.FK_DEPRECIACION_ACTIVO" FromRole="ACTIVO" ToRole="DEPRECIACION" />
+    <NavigationProperty Name="DEPRECIACIONSRIs" Relationship="HVALLESModel.FK_DEPRECIACIONSRI_ACTIVO" FromRole="ACTIVO" ToRole="DEPRECIACIONSRI" />
+    <NavigationProperty Name="MANTENIMIENTOes" Relationship="HVALLESModel.FK_MANTENIMIENTO_ACTIVO" FromRole="ACTIVO" ToRole="MANTENIMIENTO" />
+  </EntityType>
+  <Association Name="FK_ACTIVO_COLOR">
+    <End Type="HVALLESModel.COLOR" Role="COLOR" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COLOR">
+        <PropertyRef Name="COL_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="COL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_CUSTODIO">
+    <End Type="HVALLESModel.CUSTODIO" Role="CUSTODIO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTODIO">
+        <PropertyRef Name="CUS_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="CUS_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ECO1">
+    <End Type="HVALLESModel.ESTRUCOMP" Role="ESTRUCOMP" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRUCOMP">
+        <PropertyRef Name="ECO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="ECO_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ECO2">
+    <End Type="HVALLESModel.ESTRUCOMP" Role="ESTRUCOMP" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRUCOMP">
+        <PropertyRef Name="ECO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="ECO_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ESTADO">
+    <End Type="HVALLESModel.ESTADO" Role="ESTADO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="EST_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="EST_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ESTADO1">
+    <End Type="HVALLESModel.ESTADO" Role="ESTADO" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="EST_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="EST_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO2">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO3">
+    <End Type="HVALLESModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_MARCA">
+    <End Type="HVALLESModel.MARCA" Role="MARCA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARCA">
+        <PropertyRef Name="MAR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="MAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_MODELO">
+    <End Type="HVALLESModel.MODELO" Role="MODELO" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODELO">
+        <PropertyRef Name="MOD_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="MOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_PROVEEDOR">
+    <End Type="HVALLESModel.PROVEEDOR" Role="PROVEEDOR" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="PRO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="PRO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_TIPOSEGURO">
+    <End Type="HVALLESModel.TIPO_SEGURO" Role="TIPO_SEGURO" Multiplicity="0..1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_SEGURO">
+        <PropertyRef Name="SEG_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="ACT_TIPOSEGURO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA">
+    <End Type="HVALLESModel.UGEOGRAFICA" Role="UGEOGRAFICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA1">
+    <End Type="HVALLESModel.UGEOGRAFICA" Role="UGEOGRAFICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA2">
+    <End Type="HVALLESModel.UGEOGRAFICA" Role="UGEOGRAFICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA3">
+    <End Type="HVALLESModel.UGEOGRAFICA" Role="UGEOGRAFICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UORGANICA2">
+    <End Type="HVALLESModel.UORGANICA" Role="UORGANICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UOR_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UORGANICA3">
+    <End Type="HVALLESModel.UORGANICA" Role="UORGANICA" Multiplicity="1" />
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UOR_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_ACTIVO1">
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="1" />
+    <End Type="HVALLESModel.CARACTERISTICA" Role="CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPRECIACION_ACTIVO">
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="1" />
+    <End Type="HVALLESModel.DEPRECIACION" Role="DEPRECIACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="DEPRECIACION">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPRECIACIONSRI_ACTIVO">
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="1" />
+    <End Type="HVALLESModel.DEPRECIACIONSRI" Role="DEPRECIACIONSRI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="DEPRECIACIONSRI">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANTENIMIENTO_ACTIVO">
+    <End Type="HVALLESModel.ACTIVO" Role="ACTIVO" Multiplicity="1" />
+    <End Type="HVALLESModel.MANTENIMIENTO" Role="MANTENIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="MANTENIMIENTO">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Cabecera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCabeceraModulo" Type="Int32" Nullable="false" />
+    <Property Name="FechaContable" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SucursalOrigen" Type="Int16" Nullable="false" />
+    <Property Name="TotalDebitoMn" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalDebitoMe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalCreditoMn" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalCreditoMe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Registros" Type="Int16" Nullable="false" />
+    <Property Name="Digitador" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Autorizador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoProceso" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LocalidadOrigen" Type="Int32" Nullable="false" />
+    <Property Name="ResponsableOrigen" Type="Int32" Nullable="false" />
+    <Property Name="ModuloCobis" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DetalleModulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCabeceraModulo" Type="Int32" Nullable="false" />
+    <Property Name="Registro" Type="Int32" Nullable="false" />
+    <Property Name="Cuenta" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdMoneda" Type="Byte" Nullable="false" />
+    <Property Name="SucursalDestino" Type="Int16" Nullable="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DebitoMn" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DebitoMe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CreditoMn" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CreditoMe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TipoTransaccion" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TipoNegociacion" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Operacion" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="Referencia" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="LocalidadDestino" Type="Int32" Nullable="false" />
+    <Property Name="ResponsableDestino" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

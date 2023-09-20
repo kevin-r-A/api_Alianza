@@ -1,0 +1,2907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="C5TATAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACRESERVA">
+    <Key>
+      <PropertyRef Name="ACT_ID" />
+    </Key>
+    <Property Name="ACT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FECHA" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTA">
+    <Key>
+      <PropertyRef Name="Act_id" />
+    </Key>
+    <Property Name="Act_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Act_UsuarioGenera" Type="nchar" MaxLength="100" />
+    <Property Name="Act_FechaGenera" Type="smalldatetime" />
+    <Property Name="Act_Nombre" Type="varchar" MaxLength="650" />
+    <Property Name="Act_Direccion" Type="varchar" MaxLength="650" />
+    <Property Name="Act_ubicacion" Type="varchar" MaxLength="650" />
+    <Property Name="Act_CustodioId" Type="int" />
+  </EntityType>
+  <EntityType Name="ACTIVO">
+    <Key>
+      <PropertyRef Name="ACT_ID" />
+    </Key>
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="EMP_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ACT_FECHACREACION" Type="smalldatetime" Nullable="false" />
+    <Property Name="ACT_FECHAINIDEPRE" Type="smalldatetime" />
+    <Property Name="ACT_DEPRECIABLESRI" Type="bit" />
+    <Property Name="ACT_DEPRECIABLE" Type="bit" />
+    <Property Name="ACT_DEPRECIADOSRI" Type="bit" />
+    <Property Name="ACT_DEPRECIADONIIF" Type="bit" />
+    <Property Name="ACT_FECHAINIOPER" Type="smalldatetime" />
+    <Property Name="ACT_FECHAINIDEPRENIIF" Type="smalldatetime" />
+    <Property Name="ACT_FECHABAJA" Type="smalldatetime" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ACT_TIPO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ACT_CODBARRAS" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ACT_CODBARRASPADRE" Type="varchar" MaxLength="20" />
+    <Property Name="ACT_CODIGO1" Type="varchar" MaxLength="100" />
+    <Property Name="GRU_ID1" Type="int" Nullable="false" />
+    <Property Name="GRU_ID2" Type="int" Nullable="false" />
+    <Property Name="GRU_ID3" Type="int" Nullable="false" />
+    <Property Name="ACT_FOTO1" Type="varchar" MaxLength="100" />
+    <Property Name="ACT_FOTO2" Type="varchar" MaxLength="100" />
+    <Property Name="ACT_DOC1" Type="varchar" MaxLength="100" />
+    <Property Name="ACT_DOC2" Type="varchar" MaxLength="100" />
+    <Property Name="UGE_ID1" Type="int" Nullable="false" />
+    <Property Name="UGE_ID2" Type="int" Nullable="false" />
+    <Property Name="UGE_ID3" Type="int" Nullable="false" />
+    <Property Name="UGE_ID4" Type="int" Nullable="false" />
+    <Property Name="UOR_ID1" Type="int" Nullable="false" />
+    <Property Name="UOR_ID2" Type="int" Nullable="false" />
+    <Property Name="UOR_ID3" Type="int" Nullable="false" />
+    <Property Name="CUS_ID1" Type="int" Nullable="false" />
+    <Property Name="CUS_ID2" Type="int" />
+    <Property Name="EST_ID1" Type="int" Nullable="false" />
+    <Property Name="EST_ID2" Type="int" />
+    <Property Name="EST_ID3" Type="int" />
+    <Property Name="MAR_ID" Type="int" Nullable="false" />
+    <Property Name="MOD_ID" Type="int" Nullable="false" />
+    <Property Name="ACT_SERIE1" Type="varchar" MaxLength="150" />
+    <Property Name="COL_ID" Type="int" />
+    <Property Name="ECO_ID1" Type="int" />
+    <Property Name="ECO_ID2" Type="int" />
+    <Property Name="PRO_ID" Type="int" />
+    <Property Name="ACT_TIPOING" Type="varchar" MaxLength="50" />
+    <Property Name="ACT_NUMFACT" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ACT_FECHACOMPRA" Type="smalldatetime" />
+    <Property Name="ACT_VALORCOMPRA" Type="money" />
+    <Property Name="ACT_ANIO" Type="int" />
+    <Property Name="ACT_VIDAUTIL" Type="int" />
+    <Property Name="ACT_VIDAUTILNIIF" Type="int" />
+    <Property Name="ACT_VALORRESIDUALNIIF" Type="money" />
+    <Property Name="ACT_GARANTIA" Type="bit" />
+    <Property Name="ACT_FECHAGARANTIAVENCE" Type="smalldatetime" />
+    <Property Name="ACT_OBSERVACIONES" Type="text" />
+    <Property Name="ACT_TRANSFEROK" Type="bit" Nullable="false" />
+    <Property Name="ACT_PPC" Type="int" />
+    <Property Name="ACT_H1" Type="varchar" MaxLength="6" />
+    <Property Name="ACT_H2" Type="varchar" MaxLength="6" />
+    <Property Name="ACT_PE" Type="varchar" MaxLength="8" />
+    <Property Name="ACT_OBSERVACIONES2" Type="text" />
+    <Property Name="ACT_TIPOBAJA" Type="int" />
+    <Property Name="ACT_OBSBAJA" Type="varchar" MaxLength="250" />
+    <Property Name="ACT_BAJAPROCESADA" Type="bit" />
+    <Property Name="ACT_BAJAPROCESADASRI" Type="bit" />
+    <Property Name="ACT_RESUMEN" Type="varchar" MaxLength="300" />
+    <Property Name="ACT_VALORREPO" Type="money" />
+    <Property Name="ACT_VALORRAZONABLE" Type="money" />
+    <Property Name="ACT_FECHAINVENTARIO" Type="smalldatetime" />
+    <Property Name="EMP_IDTATA" Type="int" />
+    <Property Name="ACT_ESTADOMANT" Type="varchar" MaxLength="10" />
+    <Property Name="ACT_FECHAENVIOMANT" Type="smalldatetime" />
+    <Property Name="ACT_FECHAREGRESOMANT" Type="smalldatetime" />
+    <Property Name="ACT_NOMBRELOGICO" Type="varchar" MaxLength="100" />
+    <Property Name="ACT_ESTAUXBAJA" Type="int" />
+    <Property Name="ACT_CODRFID" Type="varchar" MaxLength="50" />
+    <Property Name="ACT_STRADICIONAL3" Type="nchar" MaxLength="10" />
+    <Property Name="ACT_RETIQUETAR" Type="varchar" MaxLength="50" />
+    <Property Name="ACT_TIPOTAGRFID" Type="int" />
+  </EntityType>
+  <EntityType Name="ANIO">
+    <Key>
+      <PropertyRef Name="ANI_ID" />
+    </Key>
+    <Property Name="ANI_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="EventTime" Type="datetime" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="EventSequence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventOccurrence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="EventDetailCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Details" Type="ntext" />
+  </EntityType>
+  <EntityType Name="CARACTERISTICA">
+    <Key>
+      <PropertyRef Name="CAR_ID" />
+    </Key>
+    <Property Name="CAR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="CFA_ID" Type="int" Nullable="false" />
+    <Property Name="CAR_VALOR" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="UNI_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="CARGO">
+    <Key>
+      <PropertyRef Name="CGO_ID" />
+    </Key>
+    <Property Name="CGO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CGO_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CCAR">
+    <Key>
+      <PropertyRef Name="CCA_ID" />
+    </Key>
+    <Property Name="CCA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CCA_NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CFAMILIA">
+    <Key>
+      <PropertyRef Name="CFA_ID" />
+    </Key>
+    <Property Name="CFA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GRU_ID" Type="int" Nullable="false" />
+    <Property Name="CFA_NOMBRE" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="CFA_ORDEN" Type="int" Nullable="false" />
+    <Property Name="CFA_UNIDADES" Type="bit" Nullable="false" />
+    <Property Name="CFA_OBLIGATORIO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="CODIGO">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="COD_PREFIJO" />
+      <PropertyRef Name="COD_SUFIJO" />
+      <PropertyRef Name="COD_SECUENCIAL" />
+      <PropertyRef Name="COD_VERIFICADOR" />
+    </Key>
+    <Property Name="EMP_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="COD_PREFIJO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="COD_SUFIJO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="COD_SECUENCIAL" Type="int" Nullable="false" />
+    <Property Name="COD_VERIFICADOR" Type="int" Nullable="false" />
+    <Property Name="COD_EMPRESATATA" Type="int" />
+  </EntityType>
+  <EntityType Name="CODIGOMASIVO">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="COD_PREFIJO" />
+      <PropertyRef Name="COD_SUFIJO" />
+      <PropertyRef Name="COD_SECUENCIAL" />
+      <PropertyRef Name="COD_VERIFICADOR" />
+    </Key>
+    <Property Name="EMP_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="COD_PREFIJO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="COD_SUFIJO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="COD_SECUENCIAL" Type="int" Nullable="false" />
+    <Property Name="COD_VERIFICADOR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COLOR">
+    <Key>
+      <PropertyRef Name="COL_ID" />
+    </Key>
+    <Property Name="COL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COL_NOMBRE" Type="varchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTODIO">
+    <Key>
+      <PropertyRef Name="CUS_ID" />
+    </Key>
+    <Property Name="CUS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUS_CODIGO" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_APELLIDOS" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CUS_NOMBRES" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CUS_CEDULA" Type="varchar" MaxLength="20" />
+    <Property Name="CUS_TELEFONOFIJO" Type="varchar" MaxLength="20" />
+    <Property Name="CUS_EXT" Type="varchar" MaxLength="8" />
+    <Property Name="CUS_CELULAR" Type="varchar" MaxLength="20" />
+    <Property Name="CUS_FOTO" Type="varchar" MaxLength="150" />
+    <Property Name="CUS_EMAIL" Type="varchar" MaxLength="150" />
+    <Property Name="CGO_ID" Type="int" />
+    <Property Name="CUS_ESTADO" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_ULTIMATIX" Type="varchar" MaxLength="20" />
+    <Property Name="CUS_AREA" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_DEPARTAMENTO" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_CARGOTATA" Type="varchar" MaxLength="100" />
+    <Property Name="CUS_CIUDADTATA" Type="varchar" MaxLength="70" />
+    <Property Name="CUS_UNIDADTATA" Type="varchar" MaxLength="70" />
+    <Property Name="CUD_CODWON" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DEPRECIACION">
+    <Key>
+      <PropertyRef Name="DEP_ID" />
+    </Key>
+    <Property Name="DEP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEP_VIDAUTIL" Type="int" Nullable="false" />
+    <Property Name="DEP_VALORRESIDUAL" Type="money" Nullable="false" />
+    <Property Name="DEP_SALDOXDEPRE" Type="money" Nullable="false" />
+    <Property Name="DEP_DEPREACUM" Type="money" Nullable="false" />
+    <Property Name="DEP_PERTRANS" Type="int" Nullable="false" />
+    <Property Name="DEP_PERREMA" Type="int" Nullable="false" />
+    <Property Name="DEP_DEPREPERIODO" Type="money" Nullable="false" />
+    <Property Name="DEP_FECHAPROX" Type="smalldatetime" />
+    <Property Name="DEP_TIPO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="DEP_CCOSTO" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_GRUPO" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_OBS" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_BAJA" Type="bit" />
+  </EntityType>
+  <EntityType Name="DEPRECIACIONSRI">
+    <Key>
+      <PropertyRef Name="DEP_ID" />
+    </Key>
+    <Property Name="DEP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEP_VIDAUTIL" Type="int" Nullable="false" />
+    <Property Name="DEP_VALORRESIDUAL" Type="money" Nullable="false" />
+    <Property Name="DEP_SALDOXDEPRE" Type="money" Nullable="false" />
+    <Property Name="DEP_DEPREACUM" Type="money" Nullable="false" />
+    <Property Name="DEP_PERTRANS" Type="int" Nullable="false" />
+    <Property Name="DEP_PERREMA" Type="int" Nullable="false" />
+    <Property Name="DEP_DEPREPERIODO" Type="money" Nullable="false" />
+    <Property Name="DEP_FECHAPROX" Type="smalldatetime" />
+    <Property Name="DEP_TIPO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="DEP_CCOSTO" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_GRUPO" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_OBS" Type="varchar" MaxLength="150" />
+    <Property Name="DEP_BAJA" Type="bit" />
+  </EntityType>
+  <EntityType Name="DGENERADA">
+    <Key>
+      <PropertyRef Name="DGE_ID" />
+    </Key>
+    <Property Name="DGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DGE_GENERADA" Type="smalldatetime" Nullable="false" />
+    <Property Name="DGE_SIGUIENTE" Type="smalldatetime" Nullable="false" />
+    <Property Name="DGE_TIPO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DGE_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DGENERADASRI">
+    <Key>
+      <PropertyRef Name="DGE_ID" />
+    </Key>
+    <Property Name="DGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DGE_GENERADA" Type="smalldatetime" Nullable="false" />
+    <Property Name="DGE_SIGUIENTE" Type="smalldatetime" Nullable="false" />
+    <Property Name="DGE_TIPO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DGE_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="EMP_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EMP_PREFIJO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMP_TOTALDIGITOS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="EST_ID" />
+    </Key>
+    <Property Name="EST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EST_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EST_GRUPO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EST_ORDEN" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTRUCOMP">
+    <Key>
+      <PropertyRef Name="ECO_ID" />
+    </Key>
+    <Property Name="ECO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ECO_NOMBRE" Type="varchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'C5TATA.dbo.foto' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="foto">
+          <Property Name="Foto" Type="image" />
+        </EntityType>-->
+  <EntityType Name="GRUPO">
+    <Key>
+      <PropertyRef Name="GRU_ID" />
+    </Key>
+    <Property Name="GRU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GRU_NOMBRE" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="GRU_PADRE" Type="int" Nullable="false" />
+    <Property Name="GRU_NIVEL" Type="int" Nullable="false" />
+    <Property Name="GRU_CODIGO" Type="varchar" MaxLength="10" />
+    <Property Name="GRU_CTA1" Type="varchar" MaxLength="10" />
+    <Property Name="GRU_CTA2" Type="varchar" MaxLength="10" />
+    <Property Name="GRU_CTA3" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="GRUPOSRI">
+    <Key>
+      <PropertyRef Name="GRU_ID" />
+    </Key>
+    <Property Name="GRU_ID" Type="int" Nullable="false" />
+    <Property Name="GRU_VUSRI" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HCODIGO">
+    <Key>
+      <PropertyRef Name="HCO_ID" />
+    </Key>
+    <Property Name="HCO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HCO_FECHA" Type="smalldatetime" Nullable="false" />
+    <Property Name="HCO_USUARIO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="HCO_TIPO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HCO_COD1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HCO_COD2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HCO_NUMERO" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.HFOTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HFOTO">
+    <Key>
+      <PropertyRef Name="HFO_ID" />
+      <PropertyRef Name="HFO_FECHA" />
+      <PropertyRef Name="ACT_ID" />
+      <PropertyRef Name="HFO_FOTO1" />
+      <PropertyRef Name="CUS_ID1" />
+    </Key>
+    <Property Name="HFO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HFO_FECHA" Type="smalldatetime" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="150" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="HFO_FOTO1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HFO_FOTO2" Type="varchar" MaxLength="100" />
+    <Property Name="CUS_ID1" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CUS_ID2" Type="varchar" MaxLength="250" />
+    <Property Name="HFO_FOTO3" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HUCUSTODIO">
+    <Key>
+      <PropertyRef Name="HUC_ID" />
+    </Key>
+    <Property Name="HUC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HUC_FECHA" Type="smalldatetime" Nullable="false" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="UGE_ID1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UGE_ID2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UGE_ID3" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UGE_ID4" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UOR_ID1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UOR_ID2" Type="varchar" MaxLength="50" />
+    <Property Name="UOR_ID3" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_ID1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CUS_ID2" Type="varchar" MaxLength="50" />
+    <Property Name="EST_ID1" Type="varchar" MaxLength="50" />
+    <Property Name="EST_ID2" Type="varchar" MaxLength="50" />
+    <Property Name="EST_ID3" Type="varchar" MaxLength="50" />
+    <Property Name="EST_MANT" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="INVALIDCREDENTIALSLOG">
+    <Key>
+      <PropertyRef Name="InvalidCredentialsLogID" />
+    </Key>
+    <Property Name="InvalidCredentialsLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="IsLockedOut" Type="bit" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="15" />
+    <Property Name="LoginAttemptDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MACTIVO">
+    <Key>
+      <PropertyRef Name="MAC_ID" />
+    </Key>
+    <Property Name="MAC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAC_FECHA" Type="smalldatetime" Nullable="false" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MAC_ACCION" Type="char" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTENIMIENTO">
+    <Key>
+      <PropertyRef Name="MAN_ID" />
+    </Key>
+    <Property Name="MAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAN_DESCRIPCION" Type="varchar" MaxLength="900" />
+    <Property Name="TIP_ID_CORRECTIVO" Type="int" />
+    <Property Name="TIP_ID_PREVENTIVO" Type="int" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="90" Nullable="false" />
+    <Property Name="MAN_FECHA" Type="smalldatetime" />
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="MAN_REALIZADO" Type="bit" />
+    <Property Name="MAN_FECHAPROXINI" Type="smalldatetime" />
+    <Property Name="MAN_VALOR" Type="numeric" Precision="14" Scale="4" />
+    <Property Name="MAN_NUMDOC" Type="varchar" MaxLength="50" />
+    <Property Name="MAN_FORMA" Type="varchar" MaxLength="10" />
+    <Property Name="MAN_COBERTURA" Type="int" />
+    <Property Name="MAN_MODALIDAD" Type="varchar" MaxLength="50" />
+    <Property Name="MAN_PORMESES" Type="char" MaxLength="2" />
+    <Property Name="MAN_ESTADO" Type="char" MaxLength="1" />
+    <Property Name="MAN_FECHAPROXFIN" Type="smalldatetime" />
+    <Property Name="MAN_FECHAREALMANT" Type="smalldatetime" />
+    <Property Name="MAN_ENVIOMANT" Type="smalldatetime" />
+    <Property Name="MAN_RETORNOMANT" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="MAR_ID" />
+    </Key>
+    <Property Name="MAR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAR_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MODELO">
+    <Key>
+      <PropertyRef Name="MOD_ID" />
+    </Key>
+    <Property Name="MOD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MOD_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MAR_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="act_id" Type="int" Nullable="false" />
+    <Property Name="act_codbarras" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="act_fecharegistro" Type="smalldatetime" Nullable="false" />
+    <Property Name="act_tipomovimiento" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="act_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="act_hora" Type="varchar" MaxLength="6" />
+    <Property Name="act_obs" Type="varchar" MaxLength="300" />
+    <Property Name="act_empresa" Type="int" />
+    <Property Name="ult_cus" Type="varchar" MaxLength="20" />
+    <Property Name="ult_custrans" Type="varchar" MaxLength="20" />
+    <Property Name="act_usujustif" Type="varchar" MaxLength="50" />
+    <Property Name="act_fechajustif" Type="smalldatetime" />
+    <Property Name="act_horajustif" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PAIS">
+    <Key>
+      <PropertyRef Name="PAI_ID" />
+    </Key>
+    <Property Name="PAI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PAI_NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PAI_NIVEL" Type="int" Nullable="false" />
+    <Property Name="PAI_PADRE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARAMETROS">
+    <Key>
+      <PropertyRef Name="par_id" />
+    </Key>
+    <Property Name="par_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="par_nombre" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="par_valor" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="par_codigo" Type="int" />
+  </EntityType>
+  <EntityType Name="PPC">
+    <Key>
+      <PropertyRef Name="PPC_NUMERO" />
+    </Key>
+    <Property Name="PPC_NUMERO" Type="int" Nullable="false" />
+    <Property Name="PPC_SERIAL" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="PRO_ID" />
+    </Key>
+    <Property Name="PRO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRO_RAZON" Type="varchar" MaxLength="300" />
+    <Property Name="PRO_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="PRO_RUC" Type="varchar" MaxLength="20" />
+    <Property Name="PRO_CONTACTO" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PRO_DIRECCION" Type="varchar" MaxLength="300" />
+    <Property Name="PRO_TELEFONOF" Type="varchar" MaxLength="50" />
+    <Property Name="PRO_CELULAR" Type="varchar" MaxLength="50" />
+    <Property Name="PRO_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="PRO_EMAIL" Type="varchar" MaxLength="300" />
+    <Property Name="PRO_CREDITO" Type="int" Nullable="false" />
+    <Property Name="PRO_OBSERVACIONES" Type="varchar" MaxLength="300" />
+    <Property Name="PRO_FECHAREGISTRO" Type="smalldatetime" Nullable="false" />
+    <Property Name="GRU_ID" Type="int" Nullable="false" />
+    <Property Name="PAI_ID1" Type="int" Nullable="false" />
+    <Property Name="PAI_ID2" Type="int" />
+    <Property Name="PAI_ID3" Type="int" />
+  </EntityType>
+  <EntityType Name="REPORTE">
+    <Key>
+      <PropertyRef Name="REP_CODIGO" />
+    </Key>
+    <Property Name="REP_CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REP_CODBARRAS" Type="varchar" MaxLength="50" />
+    <Property Name="CUS_ID" Type="int" />
+    <Property Name="REP_FECHA" Type="smalldatetime" />
+    <Property Name="REP_ESTADO" Type="varchar" MaxLength="10" />
+    <Property Name="ACT_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="ROLPPC">
+    <Key>
+      <PropertyRef Name="RPP_ID" />
+    </Key>
+    <Property Name="RPP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RPP_NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIPOMAN">
+    <Key>
+      <PropertyRef Name="TIP_ID" />
+    </Key>
+    <Property Name="TIP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIP_NOMBRE" Type="varchar" MaxLength="90" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UGEOGRAFICA">
+    <Key>
+      <PropertyRef Name="UGE_ID" />
+    </Key>
+    <Property Name="UGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UGE_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UGE_PADRE" Type="int" Nullable="false" />
+    <Property Name="UGE_NIVEL" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UNIDAD">
+    <Key>
+      <PropertyRef Name="UNI_ID" />
+    </Key>
+    <Property Name="UNI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UNI_SIMBOLO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UORGANICA">
+    <Key>
+      <PropertyRef Name="UOR_ID" />
+    </Key>
+    <Property Name="UOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UOR_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UOR_PADRE" Type="int" Nullable="false" />
+    <Property Name="UOR_NIVEL" Type="int" Nullable="false" />
+    <Property Name="UGE_ID" Type="int" />
+    <Property Name="UOR_CODIGO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="USUPPC">
+    <Key>
+      <PropertyRef Name="UPP_USUARIO" />
+    </Key>
+    <Property Name="UPP_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UPP_CLAVE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.USUROLPPC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="USUROLPPC">
+    <Key>
+      <PropertyRef Name="UPP_USUARIO" />
+      <PropertyRef Name="RPP_ID" />
+    </Key>
+    <Property Name="UPP_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RPP_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XCUOR">
+    <Key>
+      <PropertyRef Name="XCU_ID" />
+    </Key>
+    <Property Name="XCU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUS_ID" Type="int" Nullable="false" />
+    <Property Name="UOR_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.Vista_Activos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vista_Activos">
+    <Key>
+      <PropertyRef Name="ACT_ID" />
+      <PropertyRef Name="ACT_CODBARRAS" />
+      <PropertyRef Name="UGE_NOMBRE1" />
+      <PropertyRef Name="UGE_NOMBRE2" />
+      <PropertyRef Name="UGE_NOMBRE3" />
+      <PropertyRef Name="UGE_NOMBRE4" />
+      <PropertyRef Name="UOR_NOMBRE1" />
+      <PropertyRef Name="UOR_NOMBRE2" />
+      <PropertyRef Name="UOR_NOMBRE3" />
+      <PropertyRef Name="CUS_NOMBRE" />
+      <PropertyRef Name="GRU_NOMBRE1" />
+      <PropertyRef Name="GRU_NOMBRE2" />
+      <PropertyRef Name="GRU_NOMBRE3" />
+      <PropertyRef Name="EST_NOMBRE" />
+      <PropertyRef Name="MAR_NOMBRE" />
+      <PropertyRef Name="MOD_NOMBRE" />
+    </Key>
+    <Property Name="ACT_ID" Type="int" Nullable="false" />
+    <Property Name="ACT_CODBARRAS" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ACT_CODBARRASPADRE" Type="varchar" MaxLength="20" />
+    <Property Name="ACT_CODIGO1" Type="varchar" MaxLength="100" />
+    <Property Name="UGE_NOMBRE1" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UGE_NOMBRE2" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UGE_NOMBRE3" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UGE_NOMBRE4" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UOR_NOMBRE1" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UOR_NOMBRE2" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UOR_NOMBRE3" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CUS_NOMBRE" Type="varchar" MaxLength="401" Nullable="false" />
+    <Property Name="GRU_NOMBRE1" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="GRU_NOMBRE2" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="GRU_NOMBRE3" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="EST_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MAR_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MOD_NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="COL_NOMBRE" Type="varchar" MaxLength="120" />
+    <Property Name="ECO_NOMBRE1" Type="varchar" MaxLength="120" />
+    <Property Name="ECO_NOMBRE2" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_Profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+    <Property Name="DataSize" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_WebPartState_Paths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_WebPartState_Shared' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataSize" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C5TATA.dbo.vw_aspnet_WebPartState_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="DataSize" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__145C0A3F">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__15502E78">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__45F365D3">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__4BAC3F29">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="Self.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__4F7CD00D">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__5070F446">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__29572725">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="Self.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__32E0915F">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__0425A276">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__37A5467C">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__36B12243">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_COLOR">
+    <End Role="COLOR" Type="Self.COLOR" Multiplicity="0..1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COLOR">
+        <PropertyRef Name="COL_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="COL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_CUSTODIO">
+    <End Role="CUSTODIO" Type="Self.CUSTODIO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTODIO">
+        <PropertyRef Name="CUS_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="CUS_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ECO1">
+    <End Role="ESTRUCOMP" Type="Self.ESTRUCOMP" Multiplicity="0..1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRUCOMP">
+        <PropertyRef Name="ECO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="ECO_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ECO2">
+    <End Role="ESTRUCOMP" Type="Self.ESTRUCOMP" Multiplicity="0..1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRUCOMP">
+        <PropertyRef Name="ECO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="ECO_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_EMPRESA">
+    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="EMP_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="EMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ESTADO">
+    <End Role="ESTADO" Type="Self.ESTADO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="EST_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="EST_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_ESTADO1">
+    <End Role="ESTADO" Type="Self.ESTADO" Multiplicity="0..1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="EST_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="EST_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO2">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_GRUPO3">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="GRU_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_MARCA">
+    <End Role="MARCA" Type="Self.MARCA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARCA">
+        <PropertyRef Name="MAR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="MAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_MODELO">
+    <End Role="MODELO" Type="Self.MODELO" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODELO">
+        <PropertyRef Name="MOD_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="MOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_Movimientos">
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="1" />
+    <End Role="MOVIMIENTOS" Type="Self.MOVIMIENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="MOVIMIENTOS">
+        <PropertyRef Name="act_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_PROVEEDOR">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="PRO_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="PRO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA">
+    <End Role="UGEOGRAFICA" Type="Self.UGEOGRAFICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA1">
+    <End Role="UGEOGRAFICA" Type="Self.UGEOGRAFICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA2">
+    <End Role="UGEOGRAFICA" Type="Self.UGEOGRAFICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UGEOGRAFICA3">
+    <End Role="UGEOGRAFICA" Type="Self.UGEOGRAFICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UGE_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UORGANICA2">
+    <End Role="UORGANICA" Type="Self.UORGANICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UOR_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVO_UORGANICA3">
+    <End Role="UORGANICA" Type="Self.UORGANICA" Multiplicity="1" />
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="ACTIVO">
+        <PropertyRef Name="UOR_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_ACTIVO1">
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="1" />
+    <End Role="CARACTERISTICA" Type="Self.CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_CFAMILIA">
+    <End Role="CFAMILIA" Type="Self.CFAMILIA" Multiplicity="1" />
+    <End Role="CARACTERISTICA" Type="Self.CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFAMILIA">
+        <PropertyRef Name="CFA_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="CFA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CARACTERISTICA_UNIDAD">
+    <End Role="UNIDAD" Type="Self.UNIDAD" Multiplicity="0..1" />
+    <End Role="CARACTERISTICA" Type="Self.CARACTERISTICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UNIDAD">
+        <PropertyRef Name="UNI_ID" />
+      </Principal>
+      <Dependent Role="CARACTERISTICA">
+        <PropertyRef Name="UNI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CFAMILIA_GRUPO">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="CFAMILIA" Type="Self.CFAMILIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="CFAMILIA">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTODIO_CARGO">
+    <End Role="CARGO" Type="Self.CARGO" Multiplicity="0..1" />
+    <End Role="CUSTODIO" Type="Self.CUSTODIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARGO">
+        <PropertyRef Name="CGO_ID" />
+      </Principal>
+      <Dependent Role="CUSTODIO">
+        <PropertyRef Name="CGO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPRECIACION_ACTIVO">
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="1" />
+    <End Role="DEPRECIACION" Type="Self.DEPRECIACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="DEPRECIACION">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPRECIACIONSRI_ACTIVO">
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="1" />
+    <End Role="DEPRECIACIONSRI" Type="Self.DEPRECIACIONSRI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="DEPRECIACIONSRI">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRUPOSRI_GRUPO">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="GRUPOSRI" Type="Self.GRUPOSRI" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="GRUPOSRI">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANTENIMIENTO_ACTIVO">
+    <End Role="ACTIVO" Type="Self.ACTIVO" Multiplicity="1" />
+    <End Role="MANTENIMIENTO" Type="Self.MANTENIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVO">
+        <PropertyRef Name="ACT_ID" />
+      </Principal>
+      <Dependent Role="MANTENIMIENTO">
+        <PropertyRef Name="ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MODELO_MARCA">
+    <End Role="MARCA" Type="Self.MARCA" Multiplicity="1" />
+    <End Role="MODELO" Type="Self.MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARCA">
+        <PropertyRef Name="MAR_ID" />
+      </Principal>
+      <Dependent Role="MODELO">
+        <PropertyRef Name="MAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_GRUPO">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="GRU_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="GRU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS">
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAIS">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS1">
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="0..1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAIS">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEEDOR_PAIS2">
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="0..1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAIS">
+        <PropertyRef Name="PAI_ID" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="PAI_ID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UORGANICA_UGEOGRAFICA">
+    <End Role="UGEOGRAFICA" Type="Self.UGEOGRAFICA" Multiplicity="0..1" />
+    <End Role="UORGANICA" Type="Self.UORGANICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGEOGRAFICA">
+        <PropertyRef Name="UGE_ID" />
+      </Principal>
+      <Dependent Role="UORGANICA">
+        <PropertyRef Name="UGE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUROLPPC_ROLPPC">
+    <End Role="ROLPPC" Type="Self.ROLPPC" Multiplicity="1" />
+    <End Role="USUROLPPC" Type="Self.USUROLPPC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLPPC">
+        <PropertyRef Name="RPP_ID" />
+      </Principal>
+      <Dependent Role="USUROLPPC">
+        <PropertyRef Name="RPP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUROLPPC_USUPPC">
+    <End Role="USUPPC" Type="Self.USUPPC" Multiplicity="1" />
+    <End Role="USUROLPPC" Type="Self.USUROLPPC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUPPC">
+        <PropertyRef Name="UPP_USUARIO" />
+      </Principal>
+      <Dependent Role="USUROLPPC">
+        <PropertyRef Name="UPP_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XCUOR_CUSTODIO">
+    <End Role="CUSTODIO" Type="Self.CUSTODIO" Multiplicity="1" />
+    <End Role="XCUOR" Type="Self.XCUOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTODIO">
+        <PropertyRef Name="CUS_ID" />
+      </Principal>
+      <Dependent Role="XCUOR">
+        <PropertyRef Name="CUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XCUOR_UORGANICA">
+    <End Role="UORGANICA" Type="Self.UORGANICA" Multiplicity="1" />
+    <End Role="XCUOR" Type="Self.XCUOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UORGANICA">
+        <PropertyRef Name="UOR_ID" />
+      </Principal>
+      <Dependent Role="XCUOR">
+        <PropertyRef Name="UOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ACTIVOPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ACTIVOPC02" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ACTIVOPC03" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ACTIVOPC04" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CUS_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ACTIVOREVERSANIIF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_DEPRECIABLE" Type="bit" Mode="In" />
+    <Parameter Name="ACT_DEPRECIADONIIF" Type="bit" Mode="In" />
+    <Parameter Name="ACT_FECHAINIOPER" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRENIIF" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_VIDAUTILNIIF" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORRESIDUALNIIF" Type="numeric" Mode="In" />
+    <Parameter Name="ACT_BAJAPROCESADA" Type="bit" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="ACTIVOREVERSATRIBU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="act_fechainidepre" Type="smalldatetime" Mode="In" />
+    <Parameter Name="act_depreciablesri" Type="bit" Mode="In" />
+    <Parameter Name="act_depreciadosri" Type="bit" Mode="In" />
+    <Parameter Name="act_valorcompra" Type="numeric" Mode="In" />
+    <Parameter Name="act_vidautil" Type="int" Mode="In" />
+    <Parameter Name="act_bajaprocesadasri" Type="bit" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="ArranqueMantCorrectivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ArranqueMantPreventivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_AnyDataInTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TablesToCheck" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Applications_CreateApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_CheckSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_ChangePasswordQuestionAndAnswer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="NewPasswordQuestion" Type="nvarchar" Mode="In" />
+    <Parameter Name="NewPasswordAnswer" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="PasswordQuestion" Type="nvarchar" Mode="In" />
+    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsApproved" Type="bit" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+    <Parameter Name="UniqueEmail" Type="int" Mode="In" />
+    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_Membership_FindUsersByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailToMatch" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_FindUsersByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetNumberOfUsersOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="MinutesSinceLastInActive" Type="int" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetPasswordWithFormat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetUserByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_GetUserByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_SetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_UnlockUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Comment" Type="ntext" Mode="In" />
+    <Parameter Name="IsApproved" Type="bit" Mode="In" />
+    <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+    <Parameter Name="UniqueEmail" Type="int" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Membership_UpdateUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsPasswordCorrect" Type="bit" Mode="In" />
+    <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
+    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Paths_CreatePath" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="PathId" Type="uniqueidentifier" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_Personalization_GetApplicationId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAdministration_DeleteAllState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAdministration_FindState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAdministration_GetCountOfState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAdministration_ResetSharedState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAdministration_ResetUserState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAllUsers_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAllUsers_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationAllUsers_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageSettings" Type="image" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationPerUser_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationPerUser_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_PersonalizationPerUser_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageSettings" Type="image" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_DeleteInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_DeleteProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_GetNumberOfInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_GetProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
+    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_GetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Profile_SetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PropertyNames" Type="ntext" Mode="In" />
+    <Parameter Name="PropertyValuesString" Type="ntext" Mode="In" />
+    <Parameter Name="PropertyValuesBinary" Type="image" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_RegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsCurrentVersion" Type="bit" Mode="In" />
+    <Parameter Name="RemoveIncompatibleSchema" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Roles_CreateRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Roles_DeleteRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DeleteOnlyIfRoleIsEmpty" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Roles_GetAllRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Roles_RoleExists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Setup_RemoveAllRoleMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Setup_RestorePermissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UnRegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_Users_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
+    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_Users_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="TablesToDeleteFrom" Type="int" Mode="In" />
+    <Parameter Name="NumTablesDeletedFrom" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_AddUsersToRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_FindUsersInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_GetRolesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_GetUsersInRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_IsUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_UsersInRoles_RemoveUsersFromRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="aspnet_WebEvent_LogEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EventId" Type="char" Mode="In" />
+    <Parameter Name="EventTimeUtc" Type="datetime" Mode="In" />
+    <Parameter Name="EventTime" Type="datetime" Mode="In" />
+    <Parameter Name="EventType" Type="nvarchar" Mode="In" />
+    <Parameter Name="EventSequence" Type="decimal" Mode="In" />
+    <Parameter Name="EventOccurrence" Type="decimal" Mode="In" />
+    <Parameter Name="EventCode" Type="int" Mode="In" />
+    <Parameter Name="EventDetailCode" Type="int" Mode="In" />
+    <Parameter Name="Message" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApplicationPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApplicationVirtualPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="MachineName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RequestUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="ExceptionType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Details" Type="ntext" Mode="In" />
+  </Function>
+  <Function Name="BAJAPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BAJAPU01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="BAJAPU02" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_FECHABAJA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_TIPOBAJA" Type="int" Mode="In" />
+    <Parameter Name="ACT_OBSBAJA" Type="varchar" Mode="In" />
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="CUSTODIOPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CUS_ULTIMATIX" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="CUSTODIOPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CUS_ULTIMATIX" Type="varchar" Mode="In" />
+    <Parameter Name="CUD_CODWON" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_CARGOTATA" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_AREA" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_DEPARTAMENTO" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_APELLIDOS" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_NOMBRES" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_CEDULA" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_TELEFONO" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_EXT" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_CELULAR" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_EMAIL" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_CIUDADTATA" Type="varchar" Mode="In" />
+    <Parameter Name="CUS_UNIDADTATA" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="DEPRECIACIACIONSRIPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DEP_VIDAUTIL" Type="int" Mode="In" />
+    <Parameter Name="DEP_SALDOXDEPRE" Type="decimal" Mode="In" />
+    <Parameter Name="DEP_PERREMA" Type="int" Mode="In" />
+    <Parameter Name="DEP_FECHAPROX" Type="smalldatetime" Mode="In" />
+    <Parameter Name="DEP_TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="DEP_CCOSTO" Type="varchar" Mode="In" />
+    <Parameter Name="DEP_GRUPO" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="DEPRECIACIONNIIFPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_VIDAUTILNIIF" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORRESIDUALNIIF" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_VALORCOMPRA" Type="decimal" Mode="In" />
+    <Parameter Name="DEP_PERREMA" Type="int" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRENIIF" Type="smalldatetime" Mode="In" />
+    <Parameter Name="DEP_TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="DEP_CCOSTO" Type="varchar" Mode="In" />
+    <Parameter Name="DEP_GRUPO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DEPRECIACIONPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_VIDAUTILNIIF" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORRESIDUALNIIF" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_VALORCOMPRA" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRENIIF" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DEPRECIACIONSRIPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_VIDAUTIL" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORCOMPRA" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID1" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ELIMINA_ACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ELIMINA_ACTIVO1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="act_codbarras" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="MANTENIMIENTOPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CODIGO" Type="varchar" Mode="In" />
+    <Parameter Name="SERIE" Type="varchar" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MANTENIMIENTOPC02" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="act_codbarras" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="MANTENIMIENTOPC03" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="act_codbarras" Type="varchar" Mode="In" />
+    <Parameter Name="act_serie1" Type="varchar" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MANTENIMIENTOPC04" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MANTENIMIENTOPC05" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="CODIGOBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="SERIE" Type="varchar" Mode="In" />
+    <Parameter Name="MARCA" Type="int" Mode="In" />
+    <Parameter Name="MODELO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MANTENIMIENTOPI01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAN_DESCRIPCION" Type="varchar" Mode="In" />
+    <Parameter Name="TIP_ID_CORRECTIVO" Type="int" Mode="In" />
+    <Parameter Name="TIP_ID_PREVENTIVO" Type="int" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_FECHA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="MAN_REALIZADO" Type="bit" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXINI" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_VALOR" Type="numeric" Mode="In" />
+    <Parameter Name="MAN_NUMDOC" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_FORMA" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_COBERTURA" Type="int" Mode="In" />
+    <Parameter Name="MAN_MODALIDAD" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_PORMESES" Type="char" Mode="In" />
+    <Parameter Name="MAN_ESTADO" Type="char" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXFIN" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_FECHAREALMANT" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ESTADOMANT" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FECHAENVIOMANT" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_FECHAREGRESOMANT" Type="smalldatetime" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="MANTENIMIENTOPI02" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAN_DESCRIPCION" Type="varchar" Mode="In" />
+    <Parameter Name="TIP_ID_CORRECTIVO" Type="int" Mode="In" />
+    <Parameter Name="TIP_ID_PREVENTIVO" Type="int" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_FECHA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="MAN_REALIZADO" Type="bit" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXINI" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_VALOR" Type="numeric" Mode="In" />
+    <Parameter Name="MAN_NUMDOC" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_FORMA" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_COBERTURA" Type="int" Mode="In" />
+    <Parameter Name="MAN_MODALIDAD" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_PORMESES" Type="char" Mode="In" />
+    <Parameter Name="MAN_ESTADO" Type="char" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXFIN" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_FECHAREALMANT" Type="smalldatetime" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="MOVIMIENTOSPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="fechaini" Type="smalldatetime" Mode="In" />
+    <Parameter Name="fechafin" Type="smalldatetime" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MOVIMIENTOSPC02" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="fechaini" Type="smalldatetime" Mode="In" />
+    <Parameter Name="fechafin" Type="smalldatetime" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PARAMETROSPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="par_nombre" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="REPORTEMOVILPC01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OP" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="TRANSACCIONESACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OP" Type="int" Mode="In" />
+    <Parameter Name="CODIGOBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="SERIE" Type="varchar" Mode="In" />
+    <Parameter Name="EMPRESA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="us_ReporteGlobalACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ArranqueMantenimientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_BackupBddALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ruta" Type="varchar" Mode="In" />
+    <Parameter Name="base" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_BajaACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FECHABAJA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_TIPOBAJA" Type="int" Mode="In" />
+    <Parameter Name="ACT_OBSBAJA" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_CambiaEstadoMantActivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codbarras" Type="varchar" Mode="In" />
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="estado" Type="char" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+    <Parameter Name="op" Type="int" Mode="In" />
+    <Parameter Name="act_cod" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delGRUPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GRU_ID1" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delGRUPO2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GRU_ID2" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delGRUPO3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GRU_ID3" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUGEOGRAFICA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UGE_ID1" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUGEOGRAFICA2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UGE_ID2" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUGEOGRAFICA3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UGE_ID3" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUGEOGRAFICA4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UGE_ID4" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUORGANICA2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UOR_ID2" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUORGANICA3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UOR_ID3" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_delUORGANICA4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UOR_ID4" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_ErrorLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="IPAddress" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_getActivomantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_getCaracteristicasAva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getDatosPdf" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_getDatosPDF_ItemXCustodios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_getDatosPdf2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGenerada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaCCNiif" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaCContables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaCContables2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaCContables4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaNiif" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaOk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getDepreciacionGeneradaTribu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getDepreciacionGeneradaTribu2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getFiltroActivoPpc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_GetReporteGlobalAval" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DESDE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="HASTA" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_getReporteMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idcod" Type="varchar" Mode="In" />
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_getReporteTransfer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="ide" Type="int" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_GetReporteXUsu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DESDE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="HASTA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="USER" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_getUgeAll3Level1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getUgeAll3Level2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getUgeAll3Level3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_IngresaDeMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_IniTransferACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actid" Type="int" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="geo1" Type="int" Mode="In" />
+    <Parameter Name="geo2" Type="int" Mode="In" />
+    <Parameter Name="geo3" Type="int" Mode="In" />
+    <Parameter Name="geo4" Type="int" Mode="In" />
+    <Parameter Name="uor1" Type="int" Mode="In" />
+    <Parameter Name="uor2" Type="int" Mode="In" />
+    <Parameter Name="uor3" Type="int" Mode="In" />
+    <Parameter Name="cus1" Type="int" Mode="In" />
+    <Parameter Name="cus2" Type="int" Mode="In" />
+    <Parameter Name="est1" Type="int" Mode="In" />
+    <Parameter Name="est2" Type="int" Mode="In" />
+    <Parameter Name="est3" Type="int" Mode="In" />
+    <Parameter Name="estman" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_IniTransferACTIVOMas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actid" Type="int" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="geo1" Type="int" Mode="In" />
+    <Parameter Name="geo2" Type="int" Mode="In" />
+    <Parameter Name="geo3" Type="int" Mode="In" />
+    <Parameter Name="geo4" Type="int" Mode="In" />
+    <Parameter Name="uor1" Type="int" Mode="In" />
+    <Parameter Name="uor2" Type="int" Mode="In" />
+    <Parameter Name="uor3" Type="int" Mode="In" />
+    <Parameter Name="cus1" Type="int" Mode="In" />
+    <Parameter Name="cus2" Type="int" Mode="In" />
+    <Parameter Name="est3" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_insDepreGenerada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_insDepreGeneradaNiif" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_insDepreGeneradaTribu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_InsertActa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="fecha" Type="smalldatetime" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="path" Type="varchar" Mode="In" />
+    <Parameter Name="num_acta" Type="varchar" Mode="In" />
+    <Parameter Name="tipo_reporte" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_InsertACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="EMP_ID" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_DEPRECIABLE" Type="bit" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRASPADRE" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODIGO1" Type="varchar" Mode="In" />
+    <Parameter Name="GRU_ID1" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID2" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID3" Type="int" Mode="In" />
+    <Parameter Name="ACT_FOTO1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FOTO2" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC2" Type="varchar" Mode="In" />
+    <Parameter Name="UGE_ID1" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID2" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID3" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID4" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID2" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID3" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID3" Type="int" Mode="In" />
+    <Parameter Name="MAR_ID" Type="int" Mode="In" />
+    <Parameter Name="MOD_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_SERIE1" Type="varchar" Mode="In" />
+    <Parameter Name="COL_ID" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID1" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID2" Type="int" Mode="In" />
+    <Parameter Name="PRO_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_TIPOING" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_NUMFACT" Type="numeric" Mode="In" />
+    <Parameter Name="ACT_FECHACOMPRA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_VALORCOMPRA" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_ANIO" Type="int" Mode="In" />
+    <Parameter Name="ACT_VIDAUTIL" Type="int" Mode="In" />
+    <Parameter Name="ACT_VIDAUTILNIIF" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORRESIDUALNIIF" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_FECHAINIOPER" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_FECHAINIDEPRENIIF" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_GARANTIA" Type="bit" Mode="In" />
+    <Parameter Name="ACT_FECHAGARANTIAVENCE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_OBSERVACIONES" Type="varchar" Mode="In" />
+    <Parameter Name="EMP_IDTATA" Type="int" Mode="In" />
+    <Parameter Name="ACT_NOMBRELOGICO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODRFID" Type="varchar" Mode="In" />
+    <Parameter Name="TIP_ID_CORRECTIVO" Type="int" Mode="In" />
+    <Parameter Name="TIP_ID_PREVENTIVO" Type="int" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXINI" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_FECHAPROXFIN" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_FECHA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="MAN_FORMA" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_COBERTURA" Type="int" Mode="In" />
+    <Parameter Name="MAN_MODALIDAD" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_PORMESES" Type="char" Mode="In" />
+    <Parameter Name="MAN_FECHAREALMANT" Type="smalldatetime" Mode="In" />
+    <Parameter Name="mantSI" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_TIPOTAGRFID" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_InsertACTIVOM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_OBSERVACIONES2" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="EMP_ID" Type="varchar" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRAS" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRASPADRE" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODIGO1" Type="varchar" Mode="In" />
+    <Parameter Name="GRU_ID1" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID2" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID3" Type="int" Mode="In" />
+    <Parameter Name="ACT_FOTO1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FOTO2" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC1" Type="varchar" Mode="In" />
+    <Parameter Name="UGE_ID1" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID2" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID3" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID4" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID2" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID3" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID1" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID3" Type="int" Mode="In" />
+    <Parameter Name="MAR_ID" Type="int" Mode="In" />
+    <Parameter Name="MOD_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_SERIE1" Type="varchar" Mode="In" />
+    <Parameter Name="COL_ID" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID1" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID2" Type="int" Mode="In" />
+    <Parameter Name="ACT_FECHACOMPRA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ANIO" Type="int" Mode="In" />
+    <Parameter Name="ACT_OBSERVACIONES" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_InsertESActivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="act_id" Type="int" Mode="In" />
+    <Parameter Name="act_codbarras" Type="varchar" Mode="In" />
+    <Parameter Name="act_fecharegistro" Type="smalldatetime" Mode="In" />
+    <Parameter Name="act_tipomovimiento" Type="char" Mode="In" />
+    <Parameter Name="act_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="act_hora" Type="varchar" Mode="In" />
+    <Parameter Name="act_obs" Type="varchar" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+    <Parameter Name="ult_cus" Type="varchar" Mode="In" />
+    <Parameter Name="ult_custrans" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_InsertMANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAN_DESCRIPCION" Type="varchar" Mode="In" />
+    <Parameter Name="TIP_ID" Type="int" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="MAN_FECHA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="MAN_REALIZADO" Type="bit" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_ReporteACTIVOPdf" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteACTIVOPdf11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteGlobalACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteGlobalACTIVO_AVALUAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteGlobalACTIVO2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+    <Parameter Name="f1" Type="smalldatetime" Mode="In" />
+    <Parameter Name="f2" Type="smalldatetime" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteGlobalACTIVOAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteGlobalACTVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ReporteGlobalTrasACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="where" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ReporteHistoricoMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codbarras" Type="varchar" Mode="In" />
+    <Parameter Name="op" Type="int" Mode="In" />
+    <Parameter Name="empresa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_ReportePpcACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_SummaryLoginS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_UpdateACTIVO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRASPADRE" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODIGO1" Type="varchar" Mode="In" />
+    <Parameter Name="GRU_ID2" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID3" Type="int" Mode="In" />
+    <Parameter Name="ACT_FOTO1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FOTO2" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC2" Type="varchar" Mode="In" />
+    <Parameter Name="UGE_ID1" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID2" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID3" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID4" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID2" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID3" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID3" Type="int" Mode="In" />
+    <Parameter Name="MAR_ID" Type="int" Mode="In" />
+    <Parameter Name="MOD_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_SERIE1" Type="varchar" Mode="In" />
+    <Parameter Name="COL_ID" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID1" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID2" Type="int" Mode="In" />
+    <Parameter Name="PRO_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_NUMFACT" Type="numeric" Mode="In" />
+    <Parameter Name="ACT_FECHACOMPRA" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_ANIO" Type="int" Mode="In" />
+    <Parameter Name="ACT_VALORRESIDUALNIIF" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_GARANTIA" Type="bit" Mode="In" />
+    <Parameter Name="ACT_FECHAGARANTIAVENCE" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ACT_OBSERVACIONES" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_VALORCOMPRA" Type="decimal" Mode="In" />
+    <Parameter Name="ACT_DEPRECIADOSRI" Type="bit" Mode="In" />
+    <Parameter Name="ACT_DEPRECIADONIIF" Type="bit" Mode="In" />
+    <Parameter Name="ACT_NOMBRELOGICO" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_TIPOTAGRFID" Type="int" Mode="In" />
+    <Parameter Name="ACT_CODRFID" Type="varchar" Mode="In" />
+    <Parameter Name="EMP_IDTATA" Type="int" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="usp_UpdateACTIVOM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACT_ID" Type="int" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODBARRASPADRE" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_CODIGO1" Type="varchar" Mode="In" />
+    <Parameter Name="GRU_ID2" Type="int" Mode="In" />
+    <Parameter Name="GRU_ID3" Type="int" Mode="In" />
+    <Parameter Name="ACT_FOTO1" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_FOTO2" Type="varchar" Mode="In" />
+    <Parameter Name="ACT_DOC1" Type="varchar" Mode="In" />
+    <Parameter Name="UGE_ID1" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID2" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID3" Type="int" Mode="In" />
+    <Parameter Name="UGE_ID4" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID1" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID2" Type="int" Mode="In" />
+    <Parameter Name="UOR_ID3" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID1" Type="int" Mode="In" />
+    <Parameter Name="CUS_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID1" Type="int" Mode="In" />
+    <Parameter Name="EST_ID2" Type="int" Mode="In" />
+    <Parameter Name="EST_ID3" Type="int" Mode="In" />
+    <Parameter Name="MAR_ID" Type="int" Mode="In" />
+    <Parameter Name="MOD_ID" Type="int" Mode="In" />
+    <Parameter Name="ACT_SERIE1" Type="varchar" Mode="In" />
+    <Parameter Name="COL_ID" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID1" Type="int" Mode="In" />
+    <Parameter Name="ECO_ID2" Type="int" Mode="In" />
+    <Parameter Name="ACT_ANIO" Type="int" Mode="In" />
+    <Parameter Name="ACT_OBSERVACIONES" Type="varchar" Mode="In" />
+    <Parameter Name="err" Type="varchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="C5TATAModelStoreContainer">
+    <EntitySet Name="ACRESERVA" EntityType="Self.ACRESERVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTA" EntityType="Self.ACTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVO" EntityType="Self.ACTIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ANIO" EntityType="Self.ANIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Self.aspnet_PersonalizationAllUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Self.aspnet_PersonalizationPerUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Profile" EntityType="Self.aspnet_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARACTERISTICA" EntityType="Self.CARACTERISTICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARGO" EntityType="Self.CARGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CCAR" EntityType="Self.CCAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CFAMILIA" EntityType="Self.CFAMILIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CODIGO" EntityType="Self.CODIGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CODIGOMASIVO" EntityType="Self.CODIGOMASIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COLOR" EntityType="Self.COLOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTODIO" EntityType="Self.CUSTODIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPRECIACION" EntityType="Self.DEPRECIACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPRECIACIONSRI" EntityType="Self.DEPRECIACIONSRI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DGENERADA" EntityType="Self.DGENERADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DGENERADASRI" EntityType="Self.DGENERADASRI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO" EntityType="Self.ESTADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTRUCOMP" EntityType="Self.ESTRUCOMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRUPO" EntityType="Self.GRUPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRUPOSRI" EntityType="Self.GRUPOSRI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HCODIGO" EntityType="Self.HCODIGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HUCUSTODIO" EntityType="Self.HUCUSTODIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVALIDCREDENTIALSLOG" EntityType="Self.INVALIDCREDENTIALSLOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MACTIVO" EntityType="Self.MACTIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANTENIMIENTO" EntityType="Self.MANTENIMIENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MARCA" EntityType="Self.MARCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MODELO" EntityType="Self.MODELO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVIMIENTOS" EntityType="Self.MOVIMIENTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARAMETROS" EntityType="Self.PARAMETROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PPC" EntityType="Self.PPC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REPORTE" EntityType="Self.REPORTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLPPC" EntityType="Self.ROLPPC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOMAN" EntityType="Self.TIPOMAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UGEOGRAFICA" EntityType="Self.UGEOGRAFICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UNIDAD" EntityType="Self.UNIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UORGANICA" EntityType="Self.UORGANICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUPPC" EntityType="Self.USUPPC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XCUOR" EntityType="Self.XCUOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HFOTO" EntityType="Self.HFOTO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HFOTO].[HFO_ID] AS [HFO_ID], 
+    [HFOTO].[HFO_FECHA] AS [HFO_FECHA], 
+    [HFOTO].[USERNAME] AS [USERNAME], 
+    [HFOTO].[ACT_ID] AS [ACT_ID], 
+    [HFOTO].[HFO_FOTO1] AS [HFO_FOTO1], 
+    [HFOTO].[HFO_FOTO2] AS [HFO_FOTO2], 
+    [HFOTO].[CUS_ID1] AS [CUS_ID1], 
+    [HFOTO].[CUS_ID2] AS [CUS_ID2], 
+    [HFOTO].[HFO_FOTO3] AS [HFO_FOTO3]
+    FROM [dbo].[HFOTO] AS [HFOTO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="USUROLPPC" EntityType="Self.USUROLPPC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [USUROLPPC].[UPP_USUARIO] AS [UPP_USUARIO], 
+    [USUROLPPC].[RPP_ID] AS [RPP_ID]
+    FROM [dbo].[USUROLPPC] AS [USUROLPPC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vista_Activos" EntityType="Self.Vista_Activos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vista_Activos].[ACT_ID] AS [ACT_ID], 
+    [Vista_Activos].[ACT_CODBARRAS] AS [ACT_CODBARRAS], 
+    [Vista_Activos].[ACT_CODBARRASPADRE] AS [ACT_CODBARRASPADRE], 
+    [Vista_Activos].[ACT_CODIGO1] AS [ACT_CODIGO1], 
+    [Vista_Activos].[UGE_NOMBRE1] AS [UGE_NOMBRE1], 
+    [Vista_Activos].[UGE_NOMBRE2] AS [UGE_NOMBRE2], 
+    [Vista_Activos].[UGE_NOMBRE3] AS [UGE_NOMBRE3], 
+    [Vista_Activos].[UGE_NOMBRE4] AS [UGE_NOMBRE4], 
+    [Vista_Activos].[UOR_NOMBRE1] AS [UOR_NOMBRE1], 
+    [Vista_Activos].[UOR_NOMBRE2] AS [UOR_NOMBRE2], 
+    [Vista_Activos].[UOR_NOMBRE3] AS [UOR_NOMBRE3], 
+    [Vista_Activos].[CUS_NOMBRE] AS [CUS_NOMBRE], 
+    [Vista_Activos].[GRU_NOMBRE1] AS [GRU_NOMBRE1], 
+    [Vista_Activos].[GRU_NOMBRE2] AS [GRU_NOMBRE2], 
+    [Vista_Activos].[GRU_NOMBRE3] AS [GRU_NOMBRE3], 
+    [Vista_Activos].[EST_NOMBRE] AS [EST_NOMBRE], 
+    [Vista_Activos].[MAR_NOMBRE] AS [MAR_NOMBRE], 
+    [Vista_Activos].[MOD_NOMBRE] AS [MOD_NOMBRE], 
+    [Vista_Activos].[COL_NOMBRE] AS [COL_NOMBRE], 
+    [Vista_Activos].[ECO_NOMBRE1] AS [ECO_NOMBRE1], 
+    [Vista_Activos].[ECO_NOMBRE2] AS [ECO_NOMBRE2]
+    FROM [dbo].[Vista_Activos] AS [Vista_Activos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
+    [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
+    [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Applications].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="Self.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
+    [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
+    [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
+    [vw_aspnet_MembershipUsers].[Email] AS [Email], 
+    [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
+    [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
+    [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
+    [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
+    [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
+    [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
+    [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
+    [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+    [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
+    [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
+    [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="Self.vw_aspnet_Profiles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Profiles].[UserId] AS [UserId], 
+    [vw_aspnet_Profiles].[LastUpdatedDate] AS [LastUpdatedDate], 
+    [vw_aspnet_Profiles].[DataSize] AS [DataSize]
+    FROM [dbo].[vw_aspnet_Profiles] AS [vw_aspnet_Profiles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Roles" EntityType="Self.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Roles].[RoleId] AS [RoleId], 
+    [vw_aspnet_Roles].[RoleName] AS [RoleName], 
+    [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
+    [vw_aspnet_Roles].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Users" EntityType="Self.vw_aspnet_Users" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Users].[UserId] AS [UserId], 
+    [vw_aspnet_Users].[UserName] AS [UserName], 
+    [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
+    [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="Self.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
+    [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Paths].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_WebPartState_Paths].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Paths].[Path] AS [Path], 
+    [vw_aspnet_WebPartState_Paths].[LoweredPath] AS [LoweredPath]
+    FROM [dbo].[vw_aspnet_WebPartState_Paths] AS [vw_aspnet_WebPartState_Paths]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Shared].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Shared].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_Shared].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_Shared] AS [vw_aspnet_WebPartState_Shared]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_User].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_User].[UserId] AS [UserId], 
+    [vw_aspnet_WebPartState_User].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__145C0A3F" Association="Self.FK__aspnet_Me__Appli__145C0A3F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__15502E78" Association="Self.FK__aspnet_Me__UserI__15502E78">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__45F365D3" Association="Self.FK__aspnet_Pa__Appli__45F365D3">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__4BAC3F29" Association="Self.FK__aspnet_Pe__PathI__4BAC3F29">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__4F7CD00D" Association="Self.FK__aspnet_Pe__PathI__4F7CD00D">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__5070F446" Association="Self.FK__aspnet_Pe__UserI__5070F446">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__29572725" Association="Self.FK__aspnet_Pr__UserI__29572725">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__32E0915F" Association="Self.FK__aspnet_Ro__Appli__32E0915F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__0425A276" Association="Self.FK__aspnet_Us__Appli__0425A276">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__37A5467C" Association="Self.FK__aspnet_Us__RoleI__37A5467C">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__36B12243" Association="Self.FK__aspnet_Us__UserI__36B12243">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_COLOR" Association="Self.FK_ACTIVO_COLOR">
+      <End Role="COLOR" EntitySet="COLOR" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_CUSTODIO" Association="Self.FK_ACTIVO_CUSTODIO">
+      <End Role="CUSTODIO" EntitySet="CUSTODIO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ECO1" Association="Self.FK_ACTIVO_ECO1">
+      <End Role="ESTRUCOMP" EntitySet="ESTRUCOMP" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ECO2" Association="Self.FK_ACTIVO_ECO2">
+      <End Role="ESTRUCOMP" EntitySet="ESTRUCOMP" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_EMPRESA" Association="Self.FK_ACTIVO_EMPRESA">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ESTADO" Association="Self.FK_ACTIVO_ESTADO">
+      <End Role="ESTADO" EntitySet="ESTADO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_ESTADO1" Association="Self.FK_ACTIVO_ESTADO1">
+      <End Role="ESTADO" EntitySet="ESTADO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO" Association="Self.FK_ACTIVO_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO2" Association="Self.FK_ACTIVO_GRUPO2">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_GRUPO3" Association="Self.FK_ACTIVO_GRUPO3">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_MARCA" Association="Self.FK_ACTIVO_MARCA">
+      <End Role="MARCA" EntitySet="MARCA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_MODELO" Association="Self.FK_ACTIVO_MODELO">
+      <End Role="MODELO" EntitySet="MODELO" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_Movimientos" Association="Self.FK_ACTIVO_Movimientos">
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+      <End Role="MOVIMIENTOS" EntitySet="MOVIMIENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_PROVEEDOR" Association="Self.FK_ACTIVO_PROVEEDOR">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA" Association="Self.FK_ACTIVO_UGEOGRAFICA">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA1" Association="Self.FK_ACTIVO_UGEOGRAFICA1">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA2" Association="Self.FK_ACTIVO_UGEOGRAFICA2">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UGEOGRAFICA3" Association="Self.FK_ACTIVO_UGEOGRAFICA3">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UORGANICA2" Association="Self.FK_ACTIVO_UORGANICA2">
+      <End Role="UORGANICA" EntitySet="UORGANICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVO_UORGANICA3" Association="Self.FK_ACTIVO_UORGANICA3">
+      <End Role="UORGANICA" EntitySet="UORGANICA" />
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_ACTIVO1" Association="Self.FK_CARACTERISTICA_ACTIVO1">
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_CFAMILIA" Association="Self.FK_CARACTERISTICA_CFAMILIA">
+      <End Role="CFAMILIA" EntitySet="CFAMILIA" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CARACTERISTICA_UNIDAD" Association="Self.FK_CARACTERISTICA_UNIDAD">
+      <End Role="UNIDAD" EntitySet="UNIDAD" />
+      <End Role="CARACTERISTICA" EntitySet="CARACTERISTICA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CFAMILIA_GRUPO" Association="Self.FK_CFAMILIA_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="CFAMILIA" EntitySet="CFAMILIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTODIO_CARGO" Association="Self.FK_CUSTODIO_CARGO">
+      <End Role="CARGO" EntitySet="CARGO" />
+      <End Role="CUSTODIO" EntitySet="CUSTODIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPRECIACION_ACTIVO" Association="Self.FK_DEPRECIACION_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+      <End Role="DEPRECIACION" EntitySet="DEPRECIACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPRECIACIONSRI_ACTIVO" Association="Self.FK_DEPRECIACIONSRI_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+      <End Role="DEPRECIACIONSRI" EntitySet="DEPRECIACIONSRI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRUPOSRI_GRUPO" Association="Self.FK_GRUPOSRI_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="GRUPOSRI" EntitySet="GRUPOSRI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANTENIMIENTO_ACTIVO" Association="Self.FK_MANTENIMIENTO_ACTIVO">
+      <End Role="ACTIVO" EntitySet="ACTIVO" />
+      <End Role="MANTENIMIENTO" EntitySet="MANTENIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MODELO_MARCA" Association="Self.FK_MODELO_MARCA">
+      <End Role="MARCA" EntitySet="MARCA" />
+      <End Role="MODELO" EntitySet="MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_GRUPO" Association="Self.FK_PROVEEDOR_GRUPO">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS" Association="Self.FK_PROVEEDOR_PAIS">
+      <End Role="PAIS" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS1" Association="Self.FK_PROVEEDOR_PAIS1">
+      <End Role="PAIS" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEEDOR_PAIS2" Association="Self.FK_PROVEEDOR_PAIS2">
+      <End Role="PAIS" EntitySet="PAIS" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UORGANICA_UGEOGRAFICA" Association="Self.FK_UORGANICA_UGEOGRAFICA">
+      <End Role="UGEOGRAFICA" EntitySet="UGEOGRAFICA" />
+      <End Role="UORGANICA" EntitySet="UORGANICA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUROLPPC_ROLPPC" Association="Self.FK_USUROLPPC_ROLPPC">
+      <End Role="ROLPPC" EntitySet="ROLPPC" />
+      <End Role="USUROLPPC" EntitySet="USUROLPPC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUROLPPC_USUPPC" Association="Self.FK_USUROLPPC_USUPPC">
+      <End Role="USUPPC" EntitySet="USUPPC" />
+      <End Role="USUROLPPC" EntitySet="USUROLPPC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XCUOR_CUSTODIO" Association="Self.FK_XCUOR_CUSTODIO">
+      <End Role="CUSTODIO" EntitySet="CUSTODIO" />
+      <End Role="XCUOR" EntitySet="XCUOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XCUOR_UORGANICA" Association="Self.FK_XCUOR_UORGANICA">
+      <End Role="UORGANICA" EntitySet="UORGANICA" />
+      <End Role="XCUOR" EntitySet="XCUOR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
